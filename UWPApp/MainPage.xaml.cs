@@ -51,14 +51,14 @@ namespace UWPApp
             int menuIndex = menu.SelectedIndex;
             switch (menuIndex)
             {
-                case 0:
-                    break;
                 case 1:
                     Frame.Navigate(typeof(FinancesPage), combo1.SelectedItem);
                     break;
                 case 2:
+                    Frame.Navigate(typeof(AnaliticsPage), combo1.SelectedItem);
                     break;
                 case 3:
+                    Frame.Navigate(typeof(SettingPage), combo1.SelectedItem);
                     break;
             }
         }
