@@ -1,0 +1,19 @@
+﻿<UserControl
+    x:Class="UWPApp.Controls.InfoPanel"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="80"
+    d:DesignWidth="360">
+
+    <Grid>
+        <Rectangle Height="80" Fill="#646464" RadiusX="6" RadiusY="6"/>
+        <TextBlock TextWrapping="Wrap" Margin="10">
+            В текущем месяце ещё не оплачены услуги по мобильной связи.
+            <LineBreak></LineBreak>Срок оплаты - 20-го числа.
+        </TextBlock>
+    </Grid>
+</UserControl>

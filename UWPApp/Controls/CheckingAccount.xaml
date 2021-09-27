@@ -1,0 +1,54 @@
+﻿<UserControl
+    x:Class="UWPApp.Controls.CheckingAccount"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="240"
+    d:DesignWidth="280">
+
+    <Grid Width="280" Height="240">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28"/>
+            <RowDefinition Height="212"/>
+        </Grid.RowDefinitions>
+        <Rectangle Grid.RowSpan="2" Fill="White" RadiusX="6" RadiusY="6" Opacity="0.7"/>
+        <TextBlock Text="Карта ВТБ **** 0478" Margin="10,7,0,4" Foreground="Black"/>
+        <Rectangle Grid.Row="1" Fill="#242424" Margin="6" RadiusX="4" RadiusY="4"/>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="130"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="32"/>
+                <RowDefinition Height="22"/>
+                <RowDefinition Height="2"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="4"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="Текущий остаток:" Margin="0,10,0,0"
+                       HorizontalAlignment="Right" />
+            <TextBlock Text="Валюта:" Grid.Row="1"
+                       HorizontalAlignment="Right"/>
+            <Rectangle Grid.Row="2" Grid.ColumnSpan="2" Fill="LightGray" Margin="6,0" Height="1"/>
+            <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="8" VerticalAlignment="Bottom" Background="Transparent">
+                <ListBoxItem Padding="0,2,0,5">
+                    <TextBlock Text="История операций" Margin="12 0 0 0" />
+                </ListBoxItem>
+                <ListBoxItem Padding="0,2,0,5">
+                    <TextBlock Text="Приход" Margin="12 0 0 0" />
+                </ListBoxItem>
+                <ListBoxItem Padding="0,2,0,5">
+                    <TextBlock Text="Расход" Margin="12 0 0 0" />
+                </ListBoxItem>
+            </ListBox>
+            <Rectangle Grid.Row="5" Grid.ColumnSpan="2" Fill="#424242" Margin="6,-4,6,6" RadiusX="4" RadiusY="4"/>
+            <TextBlock Grid.Row="5" Grid.ColumnSpan="2" Text="Банковская карта" Margin="18,7"/>
+            <Rectangle Grid.Row="4" Grid.ColumnSpan="2" Fill="#242424" Margin="6,0,6,-2" Height="6"/>
+        </Grid>
+    </Grid>
+</UserControl>
