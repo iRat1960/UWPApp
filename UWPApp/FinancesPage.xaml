@@ -29,9 +29,9 @@
             </Border>
             <TextBlock Text="Финансы" VerticalAlignment="Center" FontSize="22" FontFamily="Calibri" Margin="24,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
-            <TextBlock Text="Аккаунт:" FontSize="16" Margin="0,7"/>
-            <TextBlock x:Name="textAccount" Text="..." FontSize="16" Margin="7"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <TextBlock Text="Аккаунт:" FontSize="16" Margin="-20,12"/>
+            <TextBlock x:Name="textAccount" Text="" FontSize="16" Margin="26,12"/>
         </StackPanel>
         <SplitView x:Name="splitView" Grid.Row="1" Grid.ColumnSpan="1" DisplayMode="CompactOverlay" CompactPaneLength="48" 
                PaneBackground="#292929" OpenPaneLength="240">
@@ -46,19 +46,19 @@
                         </ListBoxItem>
                         <ListBoxItem Name="share">
                             <StackPanel Orientation="Horizontal">
-                                <SymbolIcon Symbol="DownLoad"/>
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE944;" />
                                 <TextBlock FontSize="16" Text="Доход" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="settings">
                             <StackPanel Orientation="Horizontal">
-                                <SymbolIcon Symbol="UpLoad"/>
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE8a7;" />
                                 <TextBlock FontSize="16" Text="Расход" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="setting">
                             <StackPanel Orientation="Horizontal">
-                                <SymbolIcon Symbol="Attach"/>
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE912;" />
                                 <TextBlock FontSize="16" Text="Бюджет" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>

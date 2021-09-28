@@ -1,36 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using System.Linq;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
 
 namespace UWPApp
 {
     public sealed partial class MainPage : Page
     {
+        int defaultAccount = 0;
+        HFContext db;
+
         public MainPage()
         {
             InitializeComponent();
+            NavigationCacheMode = Windows.UI.Xaml.Navigation.NavigationCacheMode.Enabled;
             Loaded += MainPage_Loaded;
         }
 
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            using (HFContext db = new HFContext())
-            {
+            db = new HFContext();
+            if (combo1.ItemsSource is null)
                 combo1.ItemsSource = db.Users.ToList();
-                if (db.Users.Count() > 0)
-                    combo1.SelectedIndex = 0; 
-            }
+            if (db.Users.Count() > 0)
+                combo1.SelectedIndex = defaultAccount;
+            menu.SelectedIndex = 0;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -49,16 +42,17 @@ namespace UWPApp
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             int menuIndex = menu.SelectedIndex;
+            string prm = combo1.SelectedItem.ToString();
             switch (menuIndex)
             {
                 case 1:
-                    Frame.Navigate(typeof(FinancesPage), combo1.SelectedItem);
+                    Frame.Navigate(typeof(FinancesPage), prm);
                     break;
                 case 2:
-                    Frame.Navigate(typeof(AnaliticsPage), combo1.SelectedItem);
+                    Frame.Navigate(typeof(AnaliticsPage), prm);
                     break;
                 case 3:
-                    Frame.Navigate(typeof(SettingPage), combo1.SelectedItem);
+                    Frame.Navigate(typeof(SettingPage), prm);
                     break;
             }
         }
@@ -97,7 +91,7 @@ namespace UWPApp
 
         private void combo1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            defaultAccount = combo1.SelectedIndex;
         }
     }
 }

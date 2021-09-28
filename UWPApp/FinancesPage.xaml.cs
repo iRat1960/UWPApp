@@ -19,20 +19,22 @@ namespace UWPApp
     {
         public FinancesPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             if (e.Parameter != null)
+            {
                 textAccount.Text = e.Parameter.ToString();
+            }
         }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
-
+        
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
             splitView.IsPaneOpen = !splitView.IsPaneOpen;

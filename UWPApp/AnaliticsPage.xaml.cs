@@ -13,23 +13,26 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
-
 namespace UWPApp
 {
-    /// <summary>
-    /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
-    /// </summary>
     public sealed partial class AnaliticsPage : Page
     {
         public AnaliticsPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
+        }
+
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.Parameter != null)
+            {
+                textAccount.Text = e.Parameter.ToString();
+            }
         }
 
         private void ToggleButton_Click(object sender, RoutedEventArgs e)
         {
-
+            splitView.IsPaneOpen = !splitView.IsPaneOpen;
         }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)

@@ -29,9 +29,9 @@
             </Border>
             <TextBlock Text="Аналитика" VerticalAlignment="Center" FontSize="22" FontFamily="Calibri" Margin="24,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
-            <TextBlock Text="Аккаунт:" FontSize="16" Margin="0,7"/>
-            <TextBlock x:Name="textAccount" Text="..." FontSize="16" Margin="7"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <TextBlock Text="Аккаунт:" FontSize="16" Margin="-20,12"/>
+            <TextBlock x:Name="textAccount" Text="" FontSize="16" Margin="26,12"/>
         </StackPanel>
         <SplitView x:Name="splitView" Grid.Row="1" Grid.ColumnSpan="1" DisplayMode="CompactOverlay" CompactPaneLength="48" 
                PaneBackground="#292929" OpenPaneLength="240">
@@ -52,7 +52,7 @@
                         </ListBoxItem>
                         <ListBoxItem Name="report">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xEb66;" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE9f9;" />
                                 <TextBlock FontSize="16" Text="Отчёты" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>

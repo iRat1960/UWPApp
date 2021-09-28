@@ -22,10 +22,6 @@ namespace UWPApp
 {
     sealed partial class App : Application
     {
-        /// <summary>
-        /// Инициализирует одноэлементный объект приложения. Это первая выполняемая строка разрабатываемого
-        /// кода, поэтому она является логическим эквивалентом main() или WinMain().
-        /// </summary>
         public App()
         {
             this.InitializeComponent();
@@ -60,7 +56,6 @@ namespace UWPApp
                         rootFrame.SetNavigationState(ApplicationData.Current.LocalSettings.Values["navHistory"].ToString());
                 }
 
-                // Размещение фрейма в текущем окне
                 Window.Current.Content = rootFrame;
             }
 
@@ -73,7 +68,6 @@ namespace UWPApp
                     // навигации
                     rootFrame.Navigate(typeof(MainPage), e.Arguments);
                 }
-                // Обеспечение активности текущего окна
                 Window.Current.Activate();
             }
 
@@ -112,7 +106,6 @@ namespace UWPApp
         {
             throw new Exception("Ошибка при загрузке страницы " + e.SourcePageType.FullName);
         }
-
         /// <summary>
         /// Вызывается при приостановке выполнения приложения.  Состояние приложения сохраняется
         /// без учета информации о том, будет ли оно завершено или возобновлено с неизменным
@@ -123,7 +116,7 @@ namespace UWPApp
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            
+
             Frame rootFrame = Window.Current.Content as Frame;
             ApplicationData.Current.LocalSettings.Values["navHistory"] = rootFrame.GetNavigationState();
 

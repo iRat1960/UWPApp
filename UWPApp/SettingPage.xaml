@@ -29,9 +29,9 @@
             </Border>
             <TextBlock Text="Настройки" VerticalAlignment="Center" FontSize="22" FontFamily="Calibri" Margin="24,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" VerticalAlignment="Center">
-            <TextBlock Text="Аккаунт:" FontSize="16" Margin="0,7"/>
-            <TextBlock x:Name="textAccount" Text="..." FontSize="16" Margin="7"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1">
+            <TextBlock Text="Аккаунт:" FontSize="16" Margin="-20,12"/>
+            <TextBlock x:Name="textAccount" Text="" FontSize="16" Margin="26,12"/>
         </StackPanel>
         <SplitView x:Name="splitView" Grid.Row="1" Grid.ColumnSpan="1" DisplayMode="CompactOverlay" CompactPaneLength="48" 
                PaneBackground="#292929" OpenPaneLength="240">
@@ -40,25 +40,25 @@
                     <ListBox x:Name="menu" SelectionMode="Single" SelectionChanged="menu_SelectionChanged">
                         <ListBoxItem Name="balnce">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xEb05;" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE8a9;" />
                                 <TextBlock FontSize="16" Text="Категории" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="history">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE81c;" />
-                                <TextBlock FontSize="16" Text="Установки" Margin="16 0 0 0" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE71d;" />
+                                <TextBlock FontSize="16" Text="Параметры" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="report">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xEb66;" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xEa18;" />
                                 <TextBlock FontSize="16" Text="Безопасность" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="exchangeRates">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE9d2;" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE7bc;" />
                                 <TextBlock FontSize="16" Text="Справочники" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
@@ -80,7 +80,7 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="Текущий баланс на " 
+                    <TextBlock Text="Категории доходов и расходов " 
                                Margin="24,14,0,0" FontSize="18"/>
                     <w:WrapPanel x:Name="wrap" Grid.Row="1">
 

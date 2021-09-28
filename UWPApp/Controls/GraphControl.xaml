@@ -26,12 +26,12 @@
                 <chart:ResourceDictionaryCollection>
                     <ResourceDictionary>
                         <Style x:Key="DataPointStyle" TargetType="Control">
-                            <Setter Property="Background" Value="DarkOrange" />
+                            <Setter Property="Background" Value="DodgerBlue" />
                         </Style>
                     </ResourceDictionary>
                     <ResourceDictionary>
                         <Style x:Key="DataPointStyle" TargetType="Control">
-                            <Setter Property="Background" Value="Yellow" />
+                            <Setter Property="Background" Value="Salmon" />
                         </Style>
                     </ResourceDictionary>
                 </chart:ResourceDictionaryCollection>
