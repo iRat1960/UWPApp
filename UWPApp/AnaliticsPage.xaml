@@ -21,7 +21,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="HeaderPanel" Orientation="Horizontal">
             <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                <ToggleButton Style="{StaticResource SymbolButton}" Click="ToggleButton_Click" VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
+                <ToggleButton Style="{StaticResource SymbolButton}" Margin="0" Click="ToggleButton_Click" 
+                              VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
                     <ToggleButton.Content>
                         <FontIcon x:Name="Hamburger" FontSize="20" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" Margin="0"/>
                     </ToggleButton.Content>

@@ -39,5 +39,20 @@ namespace UWPApp
         {
 
         }
+
+        private void suggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
+        {
+
+        }
+
+        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void list_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

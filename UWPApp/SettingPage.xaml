@@ -17,11 +17,12 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="280"/>
+            <ColumnDefinition Width="380"/>
         </Grid.ColumnDefinitions>
         <StackPanel x:Name="HeaderPanel" Orientation="Horizontal">
             <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
-                <ToggleButton Style="{StaticResource SymbolButton}" Click="ToggleButton_Click" VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
+                <ToggleButton Style="{StaticResource SymbolButton}" Margin="0" Click="ToggleButton_Click" 
+                              VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
                     <ToggleButton.Content>
                         <FontIcon x:Name="Hamburger" FontSize="20" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" Margin="0"/>
                     </ToggleButton.Content>
@@ -29,9 +30,9 @@
             </Border>
             <TextBlock Text="Настройки" VerticalAlignment="Center" FontSize="22" FontFamily="Calibri" Margin="24,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Column="1">
-            <TextBlock Text="Аккаунт:" FontSize="16" Margin="-20,12"/>
-            <TextBlock x:Name="textAccount" Text="" FontSize="16" Margin="26,12"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="60,0,0,0">
+            <TextBlock Text="Аккаунт:" FontSize="16" Margin="0,12"/>
+            <TextBlock x:Name="textAccount" Text="" FontSize="16" Margin="6,12"/>
         </StackPanel>
         <SplitView x:Name="splitView" Grid.Row="1" Grid.ColumnSpan="1" DisplayMode="CompactOverlay" CompactPaneLength="48" 
                PaneBackground="#292929" OpenPaneLength="240">
@@ -80,11 +81,59 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="Категории доходов и расходов " 
-                               Margin="24,14,0,0" FontSize="18"/>
-                    <w:WrapPanel x:Name="wrap" Grid.Row="1">
-
-                    </w:WrapPanel>
+                    <TextBlock Text="Категории" 
+                               Margin="24,12,0,0" FontSize="18"/>
+                    <Grid x:Name="grid1" Grid.Row="1" Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="64"/>
+                            <RowDefinition Height="150"/>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="28"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel>
+                            <TextBlock Margin="24,0" Text="Ограничение списка по типу категории" TextWrapping="WrapWholeWords"/>
+                            <ComboBox x:Name="comboBox" Width="240" Margin="24,4,0,0" 
+                                      HorizontalAlignment="Left" VerticalContentAlignment="Center"
+                                      SelectedIndex="0" Padding="6,0,6,3" SelectionChanged="comboBox_SelectionChanged">
+                                <x:String>Все категории</x:String>
+                                <x:String>Категории дохода</x:String>
+                                <x:String>Категории расхода</x:String>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Grid.Row="1">
+                            <TextBlock Text="Список категорий" FontSize="16" Margin="24,0"/>
+                            <TextBlock Margin="24,0" Text="Чтобы удалить или изменить данные необходимо выбрать конкретную категорию" TextWrapping="WrapWholeWords"/>
+                            <Button x:Name="buttonAdd" Content="Добавить категорию" Margin="24,8" Width="240"
+                                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
+                            <AutoSuggestBox x:Name="suggestBox" Header="Поиск и фильтрация." 
+                                            PlaceholderText="Категория" Width="480" HorizontalAlignment="Left" Margin="24,0"
+                                            QueryIcon="Find" TextChanged="suggestBox_TextChanged" />
+                        </StackPanel>
+                        <ListBox x:Name="list" Grid.Row="2" SelectionMode="Single" Background="Transparent" 
+                                 SelectionChanged="list_SelectionChanged">
+                            <ListBoxItem Name="item1">
+                                <cont:ExpButton Margin="16,0"/>
+                            </ListBoxItem>
+                            <ListBoxItem Name="item2">
+                                <cont:ExpButton Margin="16,0"/>
+                            </ListBoxItem>
+                            <ListBoxItem Name="item3">
+                                <cont:ExpButton Margin="16,0"/>
+                            </ListBoxItem>
+                        </ListBox>
+                        <!--<ScrollViewer x:Name="scroll1" Grid.Row="2" VerticalScrollBarVisibility="Auto" 
+                                      HorizontalScrollBarVisibility="Disabled">
+                            <StackPanel x:Name="sp2">
+                                <cont:ExpButton Margin="10"/>
+                                <cont:ExpButton Margin="10"/>
+                                <cont:ExpButton Margin="10"/>
+                            </StackPanel>
+                        </ScrollViewer>-->
+                        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="24,0,0,0">
+                            <TextBlock Text="Всего категорий:" Margin="0,4"/>
+                            <TextBlock x:Name="count" Text="0" Margin="6,5"/>
+                        </StackPanel>
+                    </Grid>
                 </Grid>
             </SplitView.Content>
         </SplitView>
@@ -95,38 +144,7 @@
                     <GradientStop Color="#363636" Offset="0" />
                 </LinearGradientBrush>
             </StackPanel.Background>
-            <!--<ListBox x:Name="localmenu" SelectionMode="Single" SelectionChanged="localmenu_SelectionChanged">
-                <ListBoxItem Name="item1">
-                    <StackPanel Orientation="Horizontal" Margin="0,4">
-                        <TextBlock FontSize="28" FontFamily="Segoe Fluent Icons" Text="&#xe811;" VerticalAlignment="Center" />
-                        <StackPanel>
-                            <TextBlock FontSize="16" Text="Имеющиеся активы" Margin="16 0 0 0" />
-                            <TextBlock TextWrapping="WrapWholeWords" Width="210" Foreground="LightBlue"
-                                       Text="Укажите сведения по активам, находящихся у Вас в собственности" Margin="16 8 0 0" />
-                        </StackPanel>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem Name="item2">
-                    <StackPanel Orientation="Horizontal" Margin="0,4">
-                        <TextBlock FontSize="28" FontFamily="Segoe Fluent Icons" Text="&#xF57E;" VerticalAlignment="Center" />
-                        <StackPanel>
-                            <TextBlock FontSize="16" Text="Полученные кредиты" Margin="16 0 0 0" />
-                            <TextBlock TextWrapping="WrapWholeWords" Width="200" Foreground="LightBlue"
-                                       Text="Внесите сведения по полученным кредитам" Margin="16 8 0 0" />
-                        </StackPanel>
-                    </StackPanel>
-                </ListBoxItem>
-                <ListBoxItem Name="item3">
-                    <StackPanel Orientation="Horizontal" Margin="0,4">
-                        <TextBlock FontSize="28" FontFamily="Segoe Fluent Icons" Text="&#xf57f;" VerticalAlignment="Center" />
-                        <StackPanel>
-                            <TextBlock FontSize="16" Text="Выданные займы" Margin="16 0 0 0" />
-                            <TextBlock TextWrapping="WrapWholeWords" Width="200" Foreground="LightBlue"
-                                       Text="Внесите сведения по выданным займам" Margin="16 8 0 0" />
-                        </StackPanel>
-                    </StackPanel>
-                </ListBoxItem>
-            </ListBox>-->
+            
         </StackPanel>
     </Grid>
 </Page>
