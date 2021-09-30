@@ -1,30 +1,39 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+using Windows.UI.Xaml.Media.Imaging;
 
 namespace UWPApp.Controls
 {
     public sealed partial class ExpButton : UserControl
     {
-        public ExpButton()
+        public string IconSource
         {
-            this.InitializeComponent();
+            get => image.Source.ToString();
+            set => image.Source = new BitmapImage(new Uri("ms-appx:///" + value, UriKind.RelativeOrAbsolute));
         }
 
-        private void grid1_SizeChanged(object sender, SizeChangedEventArgs e)
+        public string TextTop
         {
+            get { return textTop.Text; }
+            set { textTop.Text = value; }
+        }
 
+        public string Comment
+        {
+            get { return textType.Text; }
+            set { textType.Text = value; }
+        }
+
+        public bool ButtonVisibility
+        {
+            get { return sp.Visibility == Visibility.Visible; }
+            set { sp.Visibility = value ? Visibility.Visible : Visibility.Collapsed; }
+        }
+
+        public ExpButton()
+        {
+            InitializeComponent();
         }
     }
 }

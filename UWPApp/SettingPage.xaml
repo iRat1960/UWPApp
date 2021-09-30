@@ -83,57 +83,7 @@
                     </Rectangle>
                     <TextBlock Text="Категории" 
                                Margin="24,12,0,0" FontSize="18"/>
-                    <Grid x:Name="grid1" Grid.Row="1" Background="Transparent">
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="64"/>
-                            <RowDefinition Height="150"/>
-                            <RowDefinition Height="*"/>
-                            <RowDefinition Height="28"/>
-                        </Grid.RowDefinitions>
-                        <StackPanel>
-                            <TextBlock Margin="24,0" Text="Ограничение списка по типу категории" TextWrapping="WrapWholeWords"/>
-                            <ComboBox x:Name="comboBox" Width="240" Margin="24,4,0,0" 
-                                      HorizontalAlignment="Left" VerticalContentAlignment="Center"
-                                      SelectedIndex="0" Padding="6,0,6,3" SelectionChanged="comboBox_SelectionChanged">
-                                <x:String>Все категории</x:String>
-                                <x:String>Категории дохода</x:String>
-                                <x:String>Категории расхода</x:String>
-                            </ComboBox>
-                        </StackPanel>
-                        <StackPanel Grid.Row="1">
-                            <TextBlock Text="Список категорий" FontSize="16" Margin="24,0"/>
-                            <TextBlock Margin="24,0" Text="Чтобы удалить или изменить данные необходимо выбрать конкретную категорию" TextWrapping="WrapWholeWords"/>
-                            <Button x:Name="buttonAdd" Content="Добавить категорию" Margin="24,8" Width="240"
-                                    VerticalAlignment="Center" HorizontalAlignment="Left"/>
-                            <AutoSuggestBox x:Name="suggestBox" Header="Поиск и фильтрация." 
-                                            PlaceholderText="Категория" Width="480" HorizontalAlignment="Left" Margin="24,0"
-                                            QueryIcon="Find" TextChanged="suggestBox_TextChanged" />
-                        </StackPanel>
-                        <ListBox x:Name="list" Grid.Row="2" SelectionMode="Single" Background="Transparent" 
-                                 SelectionChanged="list_SelectionChanged">
-                            <ListBoxItem Name="item1">
-                                <cont:ExpButton Margin="16,0"/>
-                            </ListBoxItem>
-                            <ListBoxItem Name="item2">
-                                <cont:ExpButton Margin="16,0"/>
-                            </ListBoxItem>
-                            <ListBoxItem Name="item3">
-                                <cont:ExpButton Margin="16,0"/>
-                            </ListBoxItem>
-                        </ListBox>
-                        <!--<ScrollViewer x:Name="scroll1" Grid.Row="2" VerticalScrollBarVisibility="Auto" 
-                                      HorizontalScrollBarVisibility="Disabled">
-                            <StackPanel x:Name="sp2">
-                                <cont:ExpButton Margin="10"/>
-                                <cont:ExpButton Margin="10"/>
-                                <cont:ExpButton Margin="10"/>
-                            </StackPanel>
-                        </ScrollViewer>-->
-                        <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="24,0,0,0">
-                            <TextBlock Text="Всего категорий:" Margin="0,4"/>
-                            <TextBlock x:Name="count" Text="0" Margin="6,5"/>
-                        </StackPanel>
-                    </Grid>
+                    <cont:CategoryControl Grid.Row="1"/>
                 </Grid>
             </SplitView.Content>
         </SplitView>

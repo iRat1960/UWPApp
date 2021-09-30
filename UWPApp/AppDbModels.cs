@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace UWPApp
 {
@@ -89,6 +88,51 @@ namespace UWPApp
         Кредитор
     }
     #endregion
+    
+    public class CategoryView : INotifyPropertyChanged
+    {
+        private int _id;
+        public int Id
+        {
+            get { return _id; }
+            set { _id = value; OnPropertyChanged("Id"); }
+        }
+
+        private string _name;
+        public string Name
+        {
+            get { return _name; }
+            set { _name = value; OnPropertyChanged("Name"); }
+        }
+
+        private string _icons;
+        public string Icons
+        {
+            get { return _icons; }
+            set { _icons = value; OnPropertyChanged("Icons"); }
+        }
+
+        private string _type;
+        public string Type
+        {
+            get { return _type; }
+            set { _type = value; OnPropertyChanged("Type"); }
+        }
+
+        private bool _selected;
+        public bool ItemSelected
+        {
+            get { return _selected; }
+            set { _selected = value; OnPropertyChanged("ItemSelected"); }
+        }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+        public void OnPropertyChanged([CallerMemberName] string property = "")
+        {
+            if (PropertyChanged != null)
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+        }
+    }
 
     #region " Таблицы данных "
     public class User
@@ -131,7 +175,7 @@ namespace UWPApp
         [Required, StringLength(100), Display(Name = "Иконка")]
         public string Icons { get; set; }
         [Required, Display(Name = "Тип")]
-        public CategoriesType Type { get; set; }
+        public string Type { get; set; }
         [Display(Name = "Проводка")]
         public int? ContentOfOperationId { get; set; }
         public int? ParentId { get; set; }

@@ -1,0 +1,898 @@
+﻿[
+    {
+        "Id": 1,
+        "Name": "Автотранспорт",
+        "Icons": "Icons/001.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 2,
+        "Name": "Коммунальные услуги",
+        "Icons": "Icons/002.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 3,
+        "Name": "Телекоммуникация",
+        "Icons": "Icons/003.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 4,
+        "Name": "Здоровье",
+        "Icons": "Icons/004.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 5,
+        "Name": "Учёба",
+        "Icons": "Icons/005.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 6,
+        "Name": "Товары и услуги",
+        "Icons": "Icons/006.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 7,
+        "Name": "Продукты питания",
+        "Icons": "Icons/007.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 8,
+        "Name": "Налоги и штрафы",
+        "Icons": "Icons/008.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 9,
+        "Name": "Спорт",
+        "Icons": "Icons/009.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 10,
+        "Name": "Развлечения",
+        "Icons": "Icons/010.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 11,
+        "Name": "Перечисления",
+        "Icons": "Icons/011.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 12,
+        "Name": "Арендные платежи",
+        "Icons": "Icons/012.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 13,
+        "Name": "Прочие расходы",
+        "Icons": "Icons/013.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 14,
+        "Name": "Заработок",
+        "Icons": "Icons/014.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 15,
+        "Name": "Проценты",
+        "Icons": "Icons/015.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 16,
+        "Name": "Продажи",
+        "Icons": "Icons/016.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 17,
+        "Name": "Арендные платежи",
+        "Icons": "Icons/017.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 18,
+        "Name": "Материальная помощь",
+        "Icons": "Icons/018.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 19,
+        "Name": "Перечисления",
+        "Icons": "Icons/019.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 20,
+        "Name": "Прочие доходы",
+        "Icons": "Icons/020.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 0
+    },
+    {
+        "Id": 21,
+        "Name": "ГСМ",
+        "Icons": "Icons/021.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 1
+    },
+    {
+        "Id": 22,
+        "Name": "Техобслуживание",
+        "Icons": "Icons/022.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 1
+    },
+    {
+        "Id": 23,
+        "Name": "Техосмотр",
+        "Icons": "Icons/023.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 1
+    },
+    {
+        "Id": 24,
+        "Name": "Страховка",
+        "Icons": "Icons/024.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 1
+    },
+    {
+        "Id": 25,
+        "Name": "Прочие",
+        "Icons": "Icons/025.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 1
+    },
+    {
+        "Id": 26,
+        "Name": "Оплата счета ЖКХ",
+        "Icons": "Icons/026.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 27,
+        "Name": "Электроэнергия",
+        "Icons": "Icons/027.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 28,
+        "Name": "Вода",
+        "Icons": "Icons/028.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 29,
+        "Name": "Канализация",
+        "Icons": "Icons/029.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 30,
+        "Name": "Газ",
+        "Icons": "Icons/030.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 31,
+        "Name": "Отопление",
+        "Icons": "Icons/031.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 32,
+        "Name": "Прочие",
+        "Icons": "Icons/032.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 2
+    },
+    {
+        "Id": 33,
+        "Name": "Телефония",
+        "Icons": "Icons/033.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 3
+    },
+    {
+        "Id": 34,
+        "Name": "Мобильная связь",
+        "Icons": "Icons/034.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 3
+    },
+    {
+        "Id": 35,
+        "Name": "Интернет",
+        "Icons": "Icons/035.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 3
+    },
+    {
+        "Id": 36,
+        "Name": "Телевидение",
+        "Icons": "Icons/036.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 3
+    },
+    {
+        "Id": 37,
+        "Name": "Охрана",
+        "Icons": "Icons/037.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 3
+    },
+    {
+        "Id": 38,
+        "Name": "Прочие",
+        "Icons": "Icons/038.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 3
+    },
+    {
+        "Id": 39,
+        "Name": "Платные медицинские услуги",
+        "Icons": "~Icons/039.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 4
+    },
+    {
+        "Id": 40,
+        "Name": "Стоматология",
+        "Icons": "Icons/040.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 4
+    },
+    {
+        "Id": 41,
+        "Name": "Анализы и обследования",
+        "Icons": "Icons/041.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 4
+    },
+    {
+        "Id": 42,
+        "Name": "Санаторно-курортное лечение",
+        "Icons": "Icons/042.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 4
+    },
+    {
+        "Id": 43,
+        "Name": "Стационар",
+        "Icons": "Icons/043.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 4
+    },
+    {
+        "Id": 44,
+        "Name": "Лекарственные средства",
+        "Icons": "Icons/044.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 4
+    },
+    {
+        "Id": 45,
+        "Name": "Платное обучение",
+        "Icons": "Icons/045.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 5
+    },
+    {
+        "Id": 46,
+        "Name": "Курсы и консультации",
+        "Icons": "Icons/046.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 5
+    },
+    {
+        "Id": 47,
+        "Name": "Учебные материалы",
+        "Icons": "Icons/047.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 5
+    },
+    {
+        "Id": 48,
+        "Name": "Канцелярские товары",
+        "Icons": "Icons/048.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 5
+    },
+    {
+        "Id": 49,
+        "Name": "Хозяйственные товары",
+        "Icons": "Icons/049.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 50,
+        "Name": "Бытовая техника и мебель",
+        "Icons": "Icons/050.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 51,
+        "Name": "Одежда и обувь",
+        "Icons": "Icons/051.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 52,
+        "Name": "Садовый инвентарь",
+        "Icons": "Icons/052.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 53,
+        "Name": "Услуги по обслуживанию и ремонту",
+        "Icons": "Icons/053.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 54,
+        "Name": "Прочие товары",
+        "Icons": "Icons/054.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 55,
+        "Name": "Прочие услуги",
+        "Icons": "Icons/055.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 6
+    },
+    {
+        "Id": 56,
+        "Name": "Мясные и рыбные продукты",
+        "Icons": "Icons/056.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 57,
+        "Name": "Фрукты и овощи",
+        "Icons": "Icons/057.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 58,
+        "Name": "Молочные продукты",
+        "Icons": "Icons/058.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 59,
+        "Name": "Бакалея и выпечка",
+        "Icons": "Icons/059.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 60,
+        "Name": "Консервы и полуфабрикаты",
+        "Icons": "Icons/060.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 61,
+        "Name": "Чай, кофе, напитки",
+        "Icons": "Icons/061.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 62,
+        "Name": "Корм для животных",
+        "Icons": "Icons/062.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 63,
+        "Name": "Прочие продукты",
+        "Icons": "Icons/063.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 7
+    },
+    {
+        "Id": 64,
+        "Name": "Налог на имущество",
+        "Icons": "Icons/064.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 8
+    },
+    {
+        "Id": 65,
+        "Name": "Налог на землю",
+        "Icons": "Icons/065.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 8
+    },
+    {
+        "Id": 66,
+        "Name": "Налог на транспорт",
+        "Icons": "Icons/066.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 8
+    },
+    {
+        "Id": 67,
+        "Name": "Штрафы и пени",
+        "Icons": "Icons/067.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 8
+    },
+    {
+        "Id": 68,
+        "Name": "Прочие налоги",
+        "Icons": "Icons/068.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 8
+    },
+    {
+        "Id": 69,
+        "Name": "Спорт инвентарь",
+        "Icons": "Icons/069.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 9
+    },
+    {
+        "Id": 70,
+        "Name": "Спортивная одежда",
+        "Icons": "Icons/070.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 9
+    },
+    {
+        "Id": 71,
+        "Name": "Спортивные мероприятия",
+        "Icons": "Icons/071.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 9
+    },
+    {
+        "Id": 72,
+        "Name": "Прочие",
+        "Icons": "Icons/072.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 9
+    },
+    {
+        "Id": 73,
+        "Name": "Инвентарь для отдыха",
+        "Icons": "Icons/073.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 10
+    },
+    {
+        "Id": 74,
+        "Name": "Одежда для отдыха",
+        "Icons": "Icons/074.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 10
+    },
+    {
+        "Id": 75,
+        "Name": "Развлекательные мероприятия",
+        "Icons": "Icons/075.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 10
+    },
+    {
+        "Id": 76,
+        "Name": "Путёвки на отдых",
+        "Icons": "Icons/076.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 10
+    },
+    {
+        "Id": 77,
+        "Name": "Прочие",
+        "Icons": "Icons/077.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 10
+    },
+    {
+        "Id": 78,
+        "Name": "С банковской карты",
+        "Icons": "Icons/078.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 11
+    },
+    {
+        "Id": 79,
+        "Name": "С банковского счёта",
+        "Icons": "Icons/079.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 11
+    },
+    {
+        "Id": 80,
+        "Name": "Прочие",
+        "Icons": "Icons/080.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 11
+    },
+    {
+        "Id": 81,
+        "Name": "За аредну недвижимости",
+        "Icons": "Icons/081.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 12
+    },
+    {
+        "Id": 82,
+        "Name": "За аренду транспорта",
+        "Icons": "Icons/082.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 12
+    },
+    {
+        "Id": 83,
+        "Name": "За аренду техники и оборудования",
+        "Icons": "Icons/083.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 12
+    },
+    {
+        "Id": 84,
+        "Name": "За прочую аренду",
+        "Icons": "Icons/084.png",
+        "Type": 1,
+        "ContentOfOperationId": 1,
+        "ParentId": 12
+    },
+    {
+        "Id": 85,
+        "Name": "Заработная плата",
+        "Icons": "Icons/085.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 14
+    },
+    {
+        "Id": 86,
+        "Name": "Дивиденды",
+        "Icons": "Icons/086.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 14
+    },
+    {
+        "Id": 87,
+        "Name": "Разовые выплаты",
+        "Icons": "Icons/087.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 14
+    },
+    {
+        "Id": 88,
+        "Name": "Пенсия",
+        "Icons": "Icons/088.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 14
+    },
+    {
+        "Id": 89,
+        "Name": "Социальные пособия",
+        "Icons": "Icons/089.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 14
+    },
+    {
+        "Id": 90,
+        "Name": "Прочий заработок",
+        "Icons": "Icons/090.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 14
+    },
+    {
+        "Id": 91,
+        "Name": "По вкладам",
+        "Icons": "Icons/091.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 15
+    },
+    {
+        "Id": 92,
+        "Name": "По инвестициям",
+        "Icons": "Icons/092.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 15
+    },
+    {
+        "Id": 93,
+        "Name": "По облигациям",
+        "Icons": "Icons/093.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 15
+    },
+    {
+        "Id": 94,
+        "Name": "По займам",
+        "Icons": "Icons/094.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 15
+    },
+    {
+        "Id": 95,
+        "Name": "Прочие проценты",
+        "Icons": "Icons/095.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 15
+    },
+    {
+        "Id": 96,
+        "Name": "Недвижимого имущества",
+        "Icons": "Icons/096.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 16
+    },
+    {
+        "Id": 97,
+        "Name": "Движимого имущества",
+        "Icons": "Icons/097.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 16
+    },
+    {
+        "Id": 98,
+        "Name": "Материальных ценностей",
+        "Icons": "Icons/098.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 16
+    },
+    {
+        "Id": 99,
+        "Name": "Собственных товаров",
+        "Icons": "Icons/099.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 16
+    },
+    {
+        "Id": 100,
+        "Name": "Оказанных услуг",
+        "Icons": "Icons/100.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 16
+    },
+    {
+        "Id": 101,
+        "Name": "Прочих товаров и услуг",
+        "Icons": "Icons/101.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 16
+    },
+    {
+        "Id": 102,
+        "Name": "От аредны недвижимости",
+        "Icons": "Icons/102.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 17
+    },
+    {
+        "Id": 103,
+        "Name": "От аренды транспорта",
+        "Icons": "Icons/103.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 17
+    },
+    {
+        "Id": 104,
+        "Name": "От аренды техники и оборудования",
+        "Icons": "Icons/104.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 17
+    },
+    {
+        "Id": 105,
+        "Name": "От прочей аренды",
+        "Icons": "Icons/105.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 17
+    },
+    {
+        "Id": 106,
+        "Name": "Субсидии",
+        "Icons": "Icons/106.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 18
+    },
+    {
+        "Id": 107,
+        "Name": "Льготы",
+        "Icons": "Icons/107.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 18
+    },
+    {
+        "Id": 108,
+        "Name": "Возврат налога",
+        "Icons": "Icons/108.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 18
+    },
+    {
+        "Id": 109,
+        "Name": "Компенсация",
+        "Icons": "Icons/109.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 18
+    },
+    {
+        "Id": 110,
+        "Name": "Прочая помощь",
+        "Icons": "Icons/110.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 18
+    },
+    {
+        "Id": 111,
+        "Name": "На банковскую карту",
+        "Icons": "Icons/111.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 19
+    },
+    {
+        "Id": 112,
+        "Name": "На банковский счёт",
+        "Icons": "Icons/112.png",
+        "Type": 0,
+        "ContentOfOperationId": 1,
+        "ParentId": 19
+    }
+]

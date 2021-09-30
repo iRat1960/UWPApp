@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using UWPApp.Controls;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -36,21 +37,6 @@ namespace UWPApp
         }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void suggestBox_TextChanged(AutoSuggestBox sender, AutoSuggestBoxTextChangedEventArgs args)
-        {
-
-        }
-
-        private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void list_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

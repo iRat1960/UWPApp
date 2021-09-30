@@ -1,4 +1,11 @@
-﻿using System.Linq;
+﻿using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.Serialization.Json;
+using System.Text;
+using Windows.Storage;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -19,11 +26,34 @@ namespace UWPApp
         private void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
             db = new HFContext();
+            //loadData(db);
             if (combo1.ItemsSource is null)
                 combo1.ItemsSource = db.Users.ToList();
             if (db.Users.Count() > 0)
                 combo1.SelectedIndex = defaultAccount;
             menu.SelectedIndex = 0;
+        }
+
+        private async void loadData(HFContext db)
+        {
+            var folder = Windows.ApplicationModel.Package.Current.InstalledLocation;
+            folder = await folder.GetFolderAsync("Files");
+            var file = await folder.GetFileAsync("Categories.txt");
+            var text = await FileIO.ReadTextAsync(file);
+
+            List<Category> cont = Deserialize<List<Category>>(text);
+            db.Categories.AddRange(cont);
+            db.SaveChanges();
+        }
+
+        public static T Deserialize<T>(string json)
+        {
+            var bytes = Encoding.Unicode.GetBytes(json);
+            using (MemoryStream stream = new MemoryStream(bytes))
+            {
+                var serializer = new DataContractJsonSerializer(typeof(T));
+                return (T)serializer.ReadObject(stream);
+            }
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
