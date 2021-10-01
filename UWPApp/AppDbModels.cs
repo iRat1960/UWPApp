@@ -89,7 +89,7 @@ namespace UWPApp
     }
     #endregion
     
-    public class CategoryView : INotifyPropertyChanged
+    public class SettingView : INotifyPropertyChanged
     {
         private int _id;
         public int Id
@@ -98,18 +98,18 @@ namespace UWPApp
             set { _id = value; OnPropertyChanged("Id"); }
         }
 
-        private string _name;
-        public string Name
+        private string _caption;
+        public string Caption
         {
-            get { return _name; }
-            set { _name = value; OnPropertyChanged("Name"); }
+            get { return _caption; }
+            set { _caption = value; OnPropertyChanged("Caption"); }
         }
 
-        private string _icons;
-        public string Icons
+        private string _scaption;
+        public string SubCaption
         {
-            get { return _icons; }
-            set { _icons = value; OnPropertyChanged("Icons"); }
+            get { return _scaption; }
+            set { _scaption = value; OnPropertyChanged("SubCaption"); }
         }
 
         private string _type;

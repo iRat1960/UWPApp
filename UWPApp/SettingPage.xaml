@@ -15,11 +15,7 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="380"/>
-        </Grid.ColumnDefinitions>
-        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal">
+        <StackPanel x:Name="HeaderPanel" Orientation="Horizontal" HorizontalAlignment="Left">
             <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}">
                 <ToggleButton Style="{StaticResource SymbolButton}" Margin="0" Click="ToggleButton_Click" 
                               VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
@@ -30,11 +26,11 @@
             </Border>
             <TextBlock Text="Настройки" VerticalAlignment="Center" FontSize="22" FontFamily="Calibri" Margin="24,0,0,0"/>
         </StackPanel>
-        <StackPanel Orientation="Horizontal" Grid.Column="1" Margin="60,0,0,0">
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,20,0">
             <TextBlock Text="Аккаунт:" FontSize="16" Margin="0,12"/>
             <TextBlock x:Name="textAccount" Text="" FontSize="16" Margin="6,12"/>
         </StackPanel>
-        <SplitView x:Name="splitView" Grid.Row="1" Grid.ColumnSpan="1" DisplayMode="CompactOverlay" CompactPaneLength="48" 
+        <SplitView x:Name="splitView" Grid.Row="1" DisplayMode="CompactOverlay" CompactPaneLength="48" 
                PaneBackground="#292929" OpenPaneLength="240">
             <SplitView.Pane>
                 <RelativePanel>
@@ -67,11 +63,23 @@
                 </RelativePanel>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid>
+                <Grid x:Name="grid">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="5*"/>
+                        <ColumnDefinition Width="5*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="0" Grid.Column="1" Grid.RowSpan="2">
+                        <StackPanel.Background>
+                            <LinearGradientBrush StartPoint="1,1" EndPoint="1,0">
+                                <GradientStop Color="#242424" Offset="1" />
+                                <GradientStop Color="#363636" Offset="0" />
+                            </LinearGradientBrush>
+                        </StackPanel.Background>
+                    </StackPanel>
                     <Rectangle Grid.RowSpan="2">
                         <Rectangle.Fill>
                             <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
@@ -81,20 +89,14 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="Категории" 
-                               Margin="24,12,0,0" FontSize="18"/>
-                    <cont:CategoryControl Grid.Row="1"/>
+                    
+                    <TextBlock Text="{Binding Caption}" Margin="24,6,0,6" FontSize="20"/>
+                    <TextBlock Text="{Binding SubCaption}" Grid.Column="1" Margin="24,6,0,6" FontSize="20"/>
+                    <!--<cont:CategoryControl Grid.Row="1"/>
+                    <cont:SubCategoryControl Grid.Row="1" Grid.Column="1"/>-->
+                    
                 </Grid>
             </SplitView.Content>
         </SplitView>
-        <StackPanel Grid.Row="1" Grid.Column="1">
-            <StackPanel.Background>
-                <LinearGradientBrush StartPoint="1,1" EndPoint="1,0">
-                    <GradientStop Color="#242424" Offset="1" />
-                    <GradientStop Color="#363636" Offset="0" />
-                </LinearGradientBrush>
-            </StackPanel.Background>
-            
-        </StackPanel>
     </Grid>
 </Page>

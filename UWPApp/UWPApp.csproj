@@ -137,6 +137,9 @@
     <Compile Include="Controls\InfoPanel.xaml.cs">
       <DependentUpon>InfoPanel.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Controls\SubCategoryControl.xaml.cs">
+      <DependentUpon>SubCategoryControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DelegateCommand.cs" />
     <Compile Include="FinancesPage.xaml.cs">
       <DependentUpon>FinancesPage.xaml</DependentUpon>
@@ -263,6 +266,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Controls\InfoPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\SubCategoryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

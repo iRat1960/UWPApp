@@ -1,15 +1,15 @@
 ﻿<UserControl
-    x:Class="UWPApp.Controls.CategoryControl"
+    x:Class="UWPApp.Controls.SubCategoryControl"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:main="using:UWPApp"
     xmlns:local="using:UWPApp.Controls"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d" Loaded="UserControl_Loaded"
+    mc:Ignorable="d"
     d:DesignHeight="600"
     d:DesignWidth="800">
-    
+
     <UserControl.Resources>
         <XamlUICommand x:Name="CustomXamlUICommand" 
                        ExecuteRequested="UpdateCommand_ExecuteRequested"
@@ -39,40 +39,17 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="28"/>
         </Grid.RowDefinitions>
-        <StackPanel>
-            <TextBlock Margin="24,0" Text="Ограничение списка по типу категории" TextWrapping="WrapWholeWords"/>
-            <ComboBox x:Name="comboBox" Width="240" Margin="24,4,0,0" 
-                      HorizontalAlignment="Left" VerticalContentAlignment="Center"
-                      Padding="6,0,6,3" SelectionChanged="comboBox_SelectionChanged">
-                <x:String>Все категории</x:String>
-                <x:String>Категории доходов</x:String>
-                <x:String>Категории расходов</x:String>
-            </ComboBox>
-        </StackPanel>
+        <Polygon x:Name="poly" Fill="#121212" Points="0, 12, 400, 12, 380, 33, 400, 54, 0, 54" Visibility="Collapsed"/>
+        <TextBlock x:Name="title" Text="Выберите категорию для посмотра её подкатегорий" Margin="24,8" FontSize="14" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="1">
-            <TextBlock Text="Список категорий" FontSize="16" Margin="24,0"/>
-            <TextBlock Margin="24,0" Text="Чтобы удалить или изменить данные необходимо выбрать конкретную категорию" 
-                       TextWrapping="WrapWholeWords"/>
-            <Button x:Name="buttonAdd" Content="Добавить категорию" Margin="24,8" Width="280"
+            <TextBlock Text="Список подкатегорий" FontSize="16" Margin="24,0"/>
+            <Button x:Name="buttonAdd" Content="Добавить подкатегорию" Margin="24,32,0,8" Width="280"
                     VerticalAlignment="Center" HorizontalAlignment="Left" Click="buttonAdd_Click"/>
-            <!--<AutoSuggestBox x:Name="suggestBox" Header="Поиск и фильтрация." Margin="24,0,0,20"
-                            PlaceholderText="Категория" Width="480" HorizontalAlignment="Left"
-                            QueryIcon="Find" TextChanged="suggestBox_TextChanged" />-->
         </StackPanel>
-        <!--<ListBox x:Name="list" Grid.Row="2" SelectionMode="Single" Background="Transparent" 
-                 ItemsSource="{x:Bind Categories}" SelectionChanged="list_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate x:DataType="main:CategoryView">
-                    <local:ExpButton Margin="16,0" IconSource="{x:Bind Icons}" TextTop="{x:Bind Name}"
-                     Comment="{x:Bind Type}" ButtonVisibility="{x:Bind ItemSelected, Mode=OneWay}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
         <ListView x:Name="ListViewRight" Grid.Row="2" 
                   Loaded="list_Loaded" 
                   IsItemClickEnabled="True" 
                   SelectionMode="Single" 
-                  SelectionChanged="list_SelectionChanged"
                   ItemContainerStyle="{StaticResource HorizontalSwipe}">
             <ListView.ItemTemplate>
                 <DataTemplate x:DataType="local:ListItemData">
@@ -137,7 +114,7 @@
             </ListView.ItemTemplate>
         </ListView>
         <StackPanel Orientation="Horizontal" Grid.Row="3" Margin="24,0,0,0">
-            <TextBlock Text="Всего категорий:" Margin="0,4"/>
+            <TextBlock Text="Всего подкатегорий:" Margin="0,4"/>
             <TextBlock x:Name="count" Text="0" Margin="6,5"/>
         </StackPanel>
     </Grid>
