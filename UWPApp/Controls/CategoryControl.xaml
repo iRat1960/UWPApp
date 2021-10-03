@@ -31,6 +31,7 @@
             <Setter Property="VerticalContentAlignment" Value="Stretch"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <main:GlyphsToStringConverter x:Key="GlyphsConverter" />
     </UserControl.Resources>
     <Grid x:Name="grid1" Background="Transparent" Loaded="grid1_Loaded">
         <Grid.RowDefinitions>
@@ -53,21 +54,9 @@
             <TextBlock Text="Список категорий" FontSize="16" Margin="24,0"/>
             <TextBlock Margin="24,0" Text="Чтобы удалить или изменить данные необходимо выбрать конкретную категорию" 
                        TextWrapping="WrapWholeWords"/>
-            <Button x:Name="buttonAdd" Content="Добавить категорию" Margin="24,8" Width="280"
+            <Button x:Name="buttonAdd" Content="Добавить категорию" Margin="24,8" Width="240"
                     VerticalAlignment="Center" HorizontalAlignment="Left" Click="buttonAdd_Click"/>
-            <!--<AutoSuggestBox x:Name="suggestBox" Header="Поиск и фильтрация." Margin="24,0,0,20"
-                            PlaceholderText="Категория" Width="480" HorizontalAlignment="Left"
-                            QueryIcon="Find" TextChanged="suggestBox_TextChanged" />-->
         </StackPanel>
-        <!--<ListBox x:Name="list" Grid.Row="2" SelectionMode="Single" Background="Transparent" 
-                 ItemsSource="{x:Bind Categories}" SelectionChanged="list_SelectionChanged">
-            <ListBox.ItemTemplate>
-                <DataTemplate x:DataType="main:CategoryView">
-                    <local:ExpButton Margin="16,0" IconSource="{x:Bind Icons}" TextTop="{x:Bind Name}"
-                     Comment="{x:Bind Type}" ButtonVisibility="{x:Bind ItemSelected, Mode=OneWay}"/>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>-->
         <ListView x:Name="ListViewRight" Grid.Row="2" 
                   Loaded="list_Loaded" 
                   IsItemClickEnabled="True" 
@@ -108,7 +97,10 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Rectangle Fill="#242424" Grid.Row="0" RadiusX="6" RadiusY="6" Height="64" Width="64"/>
-                                    <Image Height="48" Width="48" Source="{x:Bind Icons}" Margin="4"/>
+                                    <FontIcon FontSize="48" FontFamily="Segoe Fluent Icons" Margin="4" 
+                                              Glyph="{x:Bind Path=Glyphs, Converter={StaticResource GlyphsConverter}}"/>
+                                    <!--<FontIcon FontSize="24" FontFamily="Segoe Fluent Icons" Margin="10"
+                                              Glyph="{x:Bind Path=SubGlyph, Converter={StaticResource GlyphsConverter}}"/>-->
                                     <StackPanel Grid.Column="1">
                                         <TextBlock Text="{x:Bind Name}" Margin="10,6,0,2" 
                                                FontSize="16" HorizontalAlignment="Left" 

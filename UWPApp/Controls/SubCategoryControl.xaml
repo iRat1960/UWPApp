@@ -31,6 +31,7 @@
             <Setter Property="VerticalContentAlignment" Value="Stretch"/>
             <Setter Property="BorderThickness" Value="0"/>
         </Style>
+        <main:GlyphsToStringConverter x:Key="GlyphsConverter" />
     </UserControl.Resources>
     <Grid x:Name="grid1" Background="Transparent" Loaded="grid1_Loaded">
         <Grid.RowDefinitions>
@@ -43,7 +44,7 @@
         <TextBlock x:Name="title" Text="Выберите категорию для посмотра её подкатегорий" Margin="24,8" FontSize="14" VerticalAlignment="Center"/>
         <StackPanel Grid.Row="1">
             <TextBlock Text="Список подкатегорий" FontSize="16" Margin="24,0"/>
-            <Button x:Name="buttonAdd" Content="Добавить подкатегорию" Margin="24,32,0,8" Width="280"
+            <Button x:Name="buttonAdd" Content="Добавить подкатегорию" Margin="24,27,0,8" Width="240"
                     VerticalAlignment="Center" HorizontalAlignment="Left" Click="buttonAdd_Click"/>
         </StackPanel>
         <ListView x:Name="ListViewRight" Grid.Row="2" 
@@ -85,7 +86,8 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Rectangle Fill="#242424" Grid.Row="0" RadiusX="6" RadiusY="6" Height="64" Width="64"/>
-                                    <Image Height="48" Width="48" Source="{x:Bind Icons}" Margin="4"/>
+                                    <FontIcon FontSize="48" FontFamily="Segoe Fluent Icons" Margin="4" 
+                                              Glyph="{x:Bind Path=Glyphs, Converter={StaticResource GlyphsConverter}}"/>
                                     <StackPanel Grid.Column="1">
                                         <TextBlock Text="{x:Bind Name}" Margin="10,6,0,2" 
                                                FontSize="16" HorizontalAlignment="Left" 

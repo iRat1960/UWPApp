@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using UWPApp.Pages;
 
 namespace UWPApp
 {
@@ -61,6 +62,11 @@ namespace UWPApp
                 }
             }
         }
+        
+        private void CategoryAdd()
+        {
+            Frame.Navigate(typeof(CategoryPage));
+        }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -83,6 +89,7 @@ namespace UWPApp
                     case 0:
                         cont = new CategoryControl();
                         (cont as CategoryControl).RegisterDelegate(listCategory_SelectionChanged);
+                        (cont as CategoryControl).RegisterDelegate(CategoryAdd);
                         view.SubCaption = "Подкатегории";
                         SubCategoryControl sub = new SubCategoryControl();
                         grid.Children.Add(sub);

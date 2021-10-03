@@ -45,7 +45,7 @@
                 <ToggleButton Style="{StaticResource SymbolButton}" Margin="0" Click="Button_Click" 
                               VerticalAlignment="Top" Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
                     <ToggleButton.Content>
-                        <FontIcon x:Name="Hamburger" FontSize="20" FontFamily="Segoe MDL2 Assets" Glyph="&#xE700;" Margin="0"/>
+                        <FontIcon x:Name="Hamburger" FontSize="20" FontFamily="Segoe Fluent Icons" Glyph="&#xE700;" Margin="0"/>
                     </ToggleButton.Content>
                 </ToggleButton>
             </Border>

@@ -92,9 +92,7 @@
                     
                     <TextBlock Text="{Binding Caption}" Margin="24,6,0,6" FontSize="20"/>
                     <TextBlock Text="{Binding SubCaption}" Grid.Column="1" Margin="24,6,0,6" FontSize="20"/>
-                    <!--<cont:CategoryControl Grid.Row="1"/>
-                    <cont:SubCategoryControl Grid.Row="1" Grid.Column="1"/>-->
-                    
+
                 </Grid>
             </SplitView.Content>
         </SplitView>

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Data;
 
 namespace UWPApp
 {
@@ -28,6 +30,61 @@ namespace UWPApp
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=HomeFinances.db");
+        }
+    }
+
+    public sealed class Global
+    {
+        public static Dictionary<int, string> GlyphList = new Dictionary<int, string>
+        {
+            { 0, "" },  
+            { 1, "\ue811" }, 
+            { 2, "\ue82f" }, 
+            { 3, "\ue704" }, 
+            { 4, "\ue95e" },
+            { 5, "\ue7be" }, 
+            { 6, "\ue7bf" }, 
+            { 7, "\uec09" }, 
+            { 8, "\ue72d" }, 
+            { 9, "\ue776" },
+            { 10, "\ued55" }, 
+            { 11, "\ue8a7" }, 
+            { 12, "\ue752" }, 
+            { 13, "\uf0e3" }, 
+            { 14, "\ue715" },
+            { 15, "\ue94c" }, 
+            { 16, "\uec26" }, 
+            { 17, "\uecc5" }, 
+            { 18, "\uf6b8" },
+            { 19, "\ue944" },
+            { 20, "\uf0e4" }, 
+            { 21, "\ue709" }, 
+            { 22, "\ue70a" }, 
+            { 23, "\ue703" }, 
+            { 24, "\ue723" },
+            { 25, "\ue724" }, 
+            { 26, "\ue728" }, 
+            { 27, "\ue731" }, 
+            { 28, "\ue77f" },
+            { 29, "\uec88" },
+            { 30, "\uec0a" },
+            { 31, "\uec32" },
+            { 32, "\uec1b" }
+        };
+    }
+
+    public class GlyphsToStringConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            int i = (int)value;
+            string ret = Global.GlyphList[i];
+            return ret;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return null;
         }
     }
 
@@ -174,6 +231,9 @@ namespace UWPApp
         public string Name { get; set; }
         [Required, StringLength(100), Display(Name = "Иконка")]
         public string Icons { get; set; }
+        [Required, Display(Name = "Код шрифта")]
+        public int Glyphs { get; set; }
+        public int SubGlyph { get; set; }
         [Required, Display(Name = "Тип")]
         public string Type { get; set; }
         [Display(Name = "Проводка")]
