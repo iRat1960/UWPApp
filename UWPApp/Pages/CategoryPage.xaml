@@ -10,44 +10,50 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid Loaded="Grid_Loaded">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="540"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
         <Grid.Background>
             <LinearGradientBrush StartPoint="1,1" EndPoint="1,0">
                 <GradientStop Color="#242424" Offset="1" />
                 <GradientStop Color="#363636" Offset="0" />
             </LinearGradientBrush>
         </Grid.Background>
-        <StackPanel>
-            <TextBlock x:Name="headerBlock" Margin="18" FontSize="24" Text="Создание новой категории"/>
+        <StackPanel Margin="20">
+            <TextBlock x:Name="headerBlock" Margin="10" FontSize="24" Text="Создание новой категории"/>
             <TextBlock FontSize="16" Margin="20,4">Наименование</TextBlock>
-            <TextBox x:Name="nameBox" Margin="20,4"/>
+            <TextBox x:Name="nameBox" Margin="20,4" Width="480" HorizontalAlignment="Left"/>
             <TextBlock FontSize="16" Margin="20,4">Тип категории</TextBlock>
             <ComboBox x:Name="comboBox" Width="280" Margin="20,4,0,0" PlaceholderText="Укажите тип категории..." 
                       HorizontalAlignment="Left" VerticalContentAlignment="Center"
                       Padding="6,0,6,3">
-                <x:String>Категория доходов</x:String>
-                <x:String>Категория расходов</x:String>
+                <x:String>Доходы</x:String>
+                <x:String>Расходы</x:String>
             </ComboBox>
+            <Border x:Name="border" Background="#181818" BorderBrush="Gray" BorderThickness="2" Margin="20,4,0,0" 
+                    Height="32" Width="280" HorizontalAlignment="Left" Visibility="Collapsed">
+                <TextBlock x:Name="textBox" Text="Тип категории" Margin="4,3"/>
+            </Border>
             <TextBlock FontSize="16" Margin="20,8,0,4">Графическое обозначение</TextBlock>
             <TextBlock FontSize="12" Margin="20,0,0,8" Text="Для выбора иконки нажмите на выделенную область"/>
-            <Border Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Height="64" Width="64"
+            <Button Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Height="72" Width="72"
                     HorizontalAlignment="Left" Margin="20,4" CornerRadius="6">
-                <ToggleButton Style="{StaticResource SymbolButton}" Click="ToggleButton_Click"
-                              VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0"
-                              Foreground="{ThemeResource ApplicationForegroundThemeBrush}">
-                    <ToggleButton.Content>
-                        <FontIcon FontSize="48" FontFamily="Segoe Fluent Icons" Glyph="&#xE2ac;"/>
-                    </ToggleButton.Content>
-                </ToggleButton>
-            </Border>
+                <Button.Content>
+                    <FontIcon x:Name="icon" FontSize="48" FontFamily="Segoe Fluent Icons" Glyph="&#xE2ac;"/>
+                </Button.Content>
+                <Button.Flyout>
+                    <Flyout x:Name="dialogBox">
+                        <Flyout.Content>
+                            <StackPanel>
+                                <TextBlock Text="Выбор иконки" FontSize="16" Margin="8"/>
+                                <w:WrapPanel x:Name="wrap" Width="435"/>
+                                <Button Click="Button_Click" Content="Отмена" Width="120" Margin="8"/>
+                            </StackPanel>
+                        </Flyout.Content>
+                    </Flyout>
+                </Button.Flyout>
+            </Button>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="button_save" Content="Сохранить" Width="120" Click="button_save_Click" Margin="20,20,10,20" />
                 <Button x:Name="button_cancel" Content="Отмена" Width="120" Click="button_cancel_Click" Margin="10,20,20,20" />
             </StackPanel>
         </StackPanel>
-        <w:WrapPanel x:Name="wrap" Grid.Column="1"/>
     </Grid>
 </Page>

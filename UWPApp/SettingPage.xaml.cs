@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using UWPApp.Controls;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
+﻿using UWPApp.Controls;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using UWPApp.Pages;
 
@@ -63,9 +52,9 @@ namespace UWPApp
             }
         }
         
-        private void CategoryAdd()
+        private void CategoryAdd(int arg)
         {
-            Frame.Navigate(typeof(CategoryPage));
+            Frame.Navigate(typeof(CategoryPage), arg);
         }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)

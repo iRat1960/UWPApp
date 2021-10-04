@@ -50,7 +50,6 @@ namespace UWPApp.Controls
                         {
                             Id = c.Id,
                             Name = c.Name,
-                            Icons = c.Icons,
                             Glyphs = c.Glyphs,
                             Type = c.Type,
                             DelCommand = deleteCommand,

@@ -229,11 +229,8 @@ namespace UWPApp
         public int Id { get; set; }
         [Required, StringLength(100), Display(Name = "Наименование")]
         public string Name { get; set; }
-        [Required, StringLength(100), Display(Name = "Иконка")]
-        public string Icons { get; set; }
         [Required, Display(Name = "Код шрифта")]
         public int Glyphs { get; set; }
-        public int SubGlyph { get; set; }
         [Required, Display(Name = "Тип")]
         public string Type { get; set; }
         [Display(Name = "Проводка")]

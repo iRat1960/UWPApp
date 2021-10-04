@@ -17,7 +17,7 @@ namespace UWPApp.Controls
         XamlUICommand updateCommand;
 
         public delegate void xListBox_SelectionChanged(object sender, SelectionChangedEventArgs e);
-        public delegate void CategoryAdd();
+        public delegate void CategoryAdd(int id);
 
         private xListBox_SelectionChanged selectionChanged;
         private CategoryAdd categoryAdd;
@@ -66,7 +66,6 @@ namespace UWPApp.Controls
                     {
                         Id = c.Id,
                         Name = c.Name,
-                        Icons = c.Icons,
                         Glyphs = c.Glyphs,
                         Type = c.Type,
                         DelCommand = deleteCommand,
@@ -84,7 +83,7 @@ namespace UWPApp.Controls
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-            categoryAdd?.Invoke();
+            categoryAdd?.Invoke(0);
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -150,21 +149,9 @@ namespace UWPApp.Controls
 
         private void UpdateCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
         {
-            //if (args.Parameter != null)
-            //{
-            //    foreach (var i in collection)
-            //    {
-            //        if (i.Name == (args.Parameter as string))
-            //        {
-            //            collection.Remove(i);
-            //            return;
-            //        }
-            //    }
-            //}
-            //if (ListViewRight.SelectedIndex != -1)
-            //{
-            //    collection.RemoveAt(ListViewRight.SelectedIndex);
-            //}
+            int id = args.Parameter != null ? (int)args.Parameter : -1;
+            if (id > -1)
+                categoryAdd?.Invoke(id);
         }
     }
 
@@ -172,9 +159,7 @@ namespace UWPApp.Controls
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Icons { get; set; }
         public int Glyphs { get; set; }
-        public int SubGlyph { get; set; }
         public string Type { get; set; }
         public ICommand DelCommand { get; set; }
         public ICommand UpdCommand { get; set; }
