@@ -11,7 +11,7 @@ namespace UWPApp.Pages
 {
     public sealed partial class CategoryPage : Page
     {
-        Category category;
+        Category category, parentCategory;
 
         public CategoryPage()
         {
@@ -20,27 +20,48 @@ namespace UWPApp.Pages
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            int id = 0, pid = 0, key = 0;
+            string type = "";
             if (e.Parameter != null)
             {
-                int id = (int)e.Parameter;
+                string args = (string)e.Parameter;
+                string[] str = args.Split(',');
+                id = Convert.ToInt32(str[0]);
+                pid = Convert.ToInt32(str[1]);
                 using (HFContext db = new HFContext())
                 {
                     category = db.Categories.FirstOrDefault(c => c.Id == id);
+                    if (pid > 0)
+                    {
+                        parentCategory = db.Categories.FirstOrDefault(c => c.Id == pid);
+                        if (parentCategory != null)
+                        {
+                            key = parentCategory.Glyphs;
+                            type = parentCategory.Type;
+                            icon.Glyph = Global.GlyphList[key];
+                            buttonIcon.Visibility = Visibility.Collapsed;
+                            borderSub.Visibility = Visibility.Visible;
+                        }
+                    }
                 }
             }
             if (category != null)
             {
-                headerBlock.Text = "Редактирование категории";
+                headerBlock.Text = "Редактирование ";
                 nameBox.Text = category.Name;
-                comboBox.Visibility = Visibility.Collapsed;
-                border.Visibility = Visibility.Visible;
-                textBox.Text = category.Type;
-                int iconId = category.Glyphs;
-                icon.Glyph = Global.GlyphList[iconId];
+                type = category.Type;
+                icon.Glyph = Global.GlyphList[category.Glyphs];
             }
             else
             {
-                category = new Category { Id = 0, Name = "", Type = "", Glyphs = 0, ParentId = 0, ContentOfOperationId = 1 };
+                category = new Category { Id = 0, Name = "", Type = type, Glyphs = key, ParentId = pid, ContentOfOperationId = 1 };
+            }
+            headerBlock.Text += (parentCategory != null ? "под" : "") + "категории";
+            if (type.Length > 0)
+            {
+                comboBox.Visibility = Visibility.Collapsed;
+                border.Visibility = Visibility.Visible;
+                textBox.Text = category.Type;
             }
         }
 
@@ -83,27 +104,34 @@ namespace UWPApp.Pages
 
         private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            Color color = Color.FromArgb(255, 18, 18, 18);
-            foreach (var item in Global.GlyphList)
+            using (HFContext db = new HFContext())
             {
-                FontIcon ficon = new FontIcon
+                Color color = Color.FromArgb(255, 18, 18, 18);
+                foreach (var item in Global.GlyphList)
                 {
-                    FontSize = 36,
-                    FontFamily = new FontFamily("Segoe Fluent Icons"),
-                    Glyph = item.Value
-                };
-                Button b = new Button
-                {
-                    Background = new SolidColorBrush(color),
-                    Height = 64,
-                    Width = 64,
-                    CornerRadius = new CornerRadius(6),
-                    Margin = new Thickness(4),
-                    Tag = item.Key
-                };
-                b.Content = ficon;
-                b.Click += button_Click;
-                wrap.Children.Add(b);
+                    var c = db.Categories.FirstOrDefault(o => o.Glyphs == item.Key);
+                    if (c == null)
+                    {
+                        FontIcon ficon = new FontIcon
+                        {
+                            FontSize = 36,
+                            FontFamily = new FontFamily("Segoe Fluent Icons"),
+                            Glyph = item.Value
+                        };
+                        Button b = new Button
+                        {
+                            Background = new SolidColorBrush(color),
+                            Height = 64,
+                            Width = 64,
+                            CornerRadius = new CornerRadius(6),
+                            Margin = new Thickness(4),
+                            Tag = item.Key
+                        };
+                        b.Content = ficon;
+                        b.Click += button_Click;
+                        wrap.Children.Add(b);
+                    }
+                }
             }
         }
 

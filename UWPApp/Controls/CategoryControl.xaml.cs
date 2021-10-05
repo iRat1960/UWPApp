@@ -17,7 +17,7 @@ namespace UWPApp.Controls
         XamlUICommand updateCommand;
 
         public delegate void xListBox_SelectionChanged(object sender, SelectionChangedEventArgs e);
-        public delegate void CategoryAdd(int id);
+        public delegate void CategoryAdd(int id, int pid);
 
         private xListBox_SelectionChanged selectionChanged;
         private CategoryAdd categoryAdd;
@@ -83,7 +83,7 @@ namespace UWPApp.Controls
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-            categoryAdd?.Invoke(0);
+            categoryAdd?.Invoke(0, 0);
         }
 
         private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -151,7 +151,7 @@ namespace UWPApp.Controls
         {
             int id = args.Parameter != null ? (int)args.Parameter : -1;
             if (id > -1)
-                categoryAdd?.Invoke(id);
+                categoryAdd?.Invoke(id, 0);
         }
     }
 

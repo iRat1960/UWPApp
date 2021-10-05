@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using Windows.UI.Xaml;
@@ -13,6 +14,15 @@ namespace UWPApp.Controls
         StandardUICommand deleteCommand;
         XamlUICommand updateCommand;
         int CategoryId = 0;
+
+        public delegate void CategoryAdd(int id, int pid);
+        
+        private CategoryAdd categoryAdd;
+        
+        public void RegisterDelegate(CategoryAdd arg)
+        {
+            categoryAdd = arg;
+        }
 
         public SubCategoryControl()
         {
@@ -63,7 +73,7 @@ namespace UWPApp.Controls
 
         private void buttonAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            categoryAdd?.Invoke(0, CategoryId);
         }
 
         private void ListViewSwipeContainer_PointerEntered(object sender, PointerRoutedEventArgs e)
@@ -86,42 +96,47 @@ namespace UWPApp.Controls
             listView.ItemsSource = collection;
         }
         
-        private void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
+        private async void DeleteCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
         {
-            //if (args.Parameter != null)
-            //{
-            //    foreach (var i in collection)
-            //    {
-            //        if (i.Name == (args.Parameter as string))
-            //        {
-            //            collection.Remove(i);
-            //            return;
-            //        }
-            //    }
-            //}
-            //if (ListViewRight.SelectedIndex != -1)
-            //{
-            //    collection.RemoveAt(ListViewRight.SelectedIndex);
-            //}
+            int id = args.Parameter != null ? (int)args.Parameter : -1;
+            if (id > -1)
+            {
+                foreach (var c in collection)
+                {
+                    if (c.Id == id)
+                    {
+                        ContentDialog deleteFileDialog = new ContentDialog()
+                        {
+                            Title = "Подтверждение действия",
+                            Content = "Вы действительно хотите удалить подкатегорию " + c.Name + "?",
+                            PrimaryButtonText = "ОК",
+                            SecondaryButtonText = "Отмена"
+                        };
+                        ContentDialogResult result = await deleteFileDialog.ShowAsync();
+                        if (result == ContentDialogResult.Primary)
+                        {
+                            collection.Remove(c);
+                            using (HFContext db = new HFContext())
+                            {
+                                Category category = db.Categories.FirstOrDefault(o => o.Id == id);
+                                if (category != null)
+                                {
+                                    db.Categories.Remove(category);
+                                    db.SaveChanges();
+                                }
+                            }
+                        }
+                        return;
+                    }
+                }
+            }
         }
 
         private void UpdateCommand_ExecuteRequested(XamlUICommand sender, ExecuteRequestedEventArgs args)
         {
-            //if (args.Parameter != null)
-            //{
-            //    foreach (var i in collection)
-            //    {
-            //        if (i.Name == (args.Parameter as string))
-            //        {
-            //            collection.Remove(i);
-            //            return;
-            //        }
-            //    }
-            //}
-            //if (ListViewRight.SelectedIndex != -1)
-            //{
-            //    collection.RemoveAt(ListViewRight.SelectedIndex);
-            //}
+            int id = args.Parameter != null ? (int)args.Parameter : -1;
+            if (id > -1)
+                categoryAdd?.Invoke(id, CategoryId);
         }
     }
 }

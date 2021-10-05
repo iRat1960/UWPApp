@@ -17,7 +17,7 @@
             </LinearGradientBrush>
         </Grid.Background>
         <StackPanel Margin="20">
-            <TextBlock x:Name="headerBlock" Margin="10" FontSize="24" Text="Создание новой категории"/>
+            <TextBlock x:Name="headerBlock" Margin="10" FontSize="24" Text="Создание новой "/>
             <TextBlock FontSize="16" Margin="20,4">Наименование</TextBlock>
             <TextBox x:Name="nameBox" Margin="20,4" Width="480" HorizontalAlignment="Left"/>
             <TextBlock FontSize="16" Margin="20,4">Тип категории</TextBlock>
@@ -33,7 +33,7 @@
             </Border>
             <TextBlock FontSize="16" Margin="20,8,0,4">Графическое обозначение</TextBlock>
             <TextBlock FontSize="12" Margin="20,0,0,8" Text="Для выбора иконки нажмите на выделенную область"/>
-            <Button Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Height="72" Width="72"
+            <Button x:Name="buttonIcon" Background="{ThemeResource SystemControlBackgroundChromeMediumBrush}" Height="72" Width="72"
                     HorizontalAlignment="Left" Margin="20,4" CornerRadius="6">
                 <Button.Content>
                     <FontIcon x:Name="icon" FontSize="48" FontFamily="Segoe Fluent Icons" Glyph="&#xE2ac;"/>
@@ -50,6 +50,10 @@
                     </Flyout>
                 </Button.Flyout>
             </Button>
+            <Border x:Name="borderSub" Background="#181818" Margin="20,4,0,0" CornerRadius="6"
+                    Height="72" Width="72" HorizontalAlignment="Left" Visibility="Collapsed">
+                <FontIcon x:Name="iconSub" FontSize="48" FontFamily="Segoe Fluent Icons" Glyph="&#xE2ac;"/>
+            </Border>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="button_save" Content="Сохранить" Width="120" Click="button_save_Click" Margin="20,20,10,20" />
                 <Button x:Name="button_cancel" Content="Отмена" Width="120" Click="button_cancel_Click" Margin="10,20,20,20" />

@@ -43,6 +43,7 @@ namespace UWPApp
                 }
                 ListItemData data = (ListItemData)list.SelectedItem;
                 SubCategoryControl cont = new SubCategoryControl(data.Id, data.Name);
+                cont.RegisterDelegate(CategoryAdd);
                 if (cont != null)
                 {
                     grid.Children.Add(cont);
@@ -52,9 +53,10 @@ namespace UWPApp
             }
         }
         
-        private void CategoryAdd(int arg)
+        private void CategoryAdd(int id, int pid)
         {
-            Frame.Navigate(typeof(CategoryPage), arg);
+            string args = id.ToString() + "," + pid.ToString();
+            Frame.Navigate(typeof(CategoryPage), args);
         }
 
         private void menu_SelectionChanged(object sender, SelectionChangedEventArgs e)
