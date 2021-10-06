@@ -12,7 +12,7 @@ namespace UWPApp
 
         public SettingPage()
         {
-            view = new SettingView { Caption = "Категории", SubCaption = "Подкатегории" };
+            view = new SettingView { Caption = "Параметры", SubCaption = "" };
             InitializeComponent();
             DataContext = view;
             menu.SelectedIndex = 0;
@@ -78,6 +78,9 @@ namespace UWPApp
                 switch (ind)
                 {
                     case 0:
+                        //cont = new CategoryControl();
+                        break;
+                    case 1:
                         cont = new CategoryControl();
                         (cont as CategoryControl).RegisterDelegate(listCategory_SelectionChanged);
                         (cont as CategoryControl).RegisterDelegate(CategoryAdd);
@@ -87,13 +90,7 @@ namespace UWPApp
                         Grid.SetColumn(sub, 1);
                         Grid.SetRow(sub, 1);
                         break;
-                    case 1:
-                        //cont = new CategoryControl();
-                        break;
                     case 2:
-                        //cont = new CategoryControl();
-                        break;
-                    case 3:
                         //cont = new CategoryControl();
                         break;
                 }

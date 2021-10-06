@@ -58,7 +58,7 @@ namespace UWPApp.Controls
                 if (ind == 0)
                     list = db.Categories.Where(o => o.ParentId == 0).ToList();
                 else
-                    list = db.Categories.Where(o => o.ParentId == 0 && o.Type == (ind == 1 ? "Доходы" : "Расходы")).ToList();
+                    list = db.Categories.Where(o => o.ParentId == 0 && o.Type == (ind == 2 ? "Доходы" : "Расходы")).ToList();
                 collection.Clear();
                 foreach (Category c in list)
                 {

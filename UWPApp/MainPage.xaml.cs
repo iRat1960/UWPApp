@@ -78,9 +78,6 @@ namespace UWPApp
                     Frame.Navigate(typeof(FinancesPage), prm);
                     break;
                 case 2:
-                    Frame.Navigate(typeof(AnaliticsPage), prm);
-                    break;
-                case 3:
                     Frame.Navigate(typeof(SettingPage), prm);
                     break;
             }

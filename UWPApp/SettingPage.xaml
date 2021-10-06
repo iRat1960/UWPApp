@@ -35,28 +35,22 @@
             <SplitView.Pane>
                 <RelativePanel>
                     <ListBox x:Name="menu" SelectionMode="Single" SelectionChanged="menu_SelectionChanged">
-                        <ListBoxItem Name="balnce">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE8a9;" />
-                                <TextBlock FontSize="16" Text="Категории" Margin="16 0 0 0" />
-                            </StackPanel>
-                        </ListBoxItem>
-                        <ListBoxItem Name="history">
+                        <ListBoxItem Name="options">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE71d;" />
                                 <TextBlock FontSize="16" Text="Параметры" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem Name="report">
+                        <ListBoxItem Name="category">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xEa18;" />
-                                <TextBlock FontSize="16" Text="Безопасность" Margin="16 0 0 0" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE8a9;" />
+                                <TextBlock FontSize="16" Text="Категории" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="exchangeRates">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE7bc;" />
-                                <TextBlock FontSize="16" Text="Справочники" Margin="16 0 0 0" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE9d2;" />
+                                <TextBlock FontSize="16" Text="Курсы валют" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                     </ListBox>

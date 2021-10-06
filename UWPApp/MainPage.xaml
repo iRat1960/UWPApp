@@ -68,12 +68,6 @@
                                 <TextBlock FontSize="16" Text="Финансы" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem Name="analitic">
-                            <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE74C;" />
-                                <TextBlock FontSize="16" Text="Аналитика" Margin="16 0 0 0" />
-                            </StackPanel>
-                        </ListBoxItem>
                         <ListBoxItem Name="setting">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE713;" />

@@ -46,8 +46,8 @@
                       HorizontalAlignment="Left" VerticalContentAlignment="Center"
                       Padding="6,0,6,3" SelectionChanged="comboBox_SelectionChanged">
                 <x:String>Все категории</x:String>
-                <x:String>Категории доходов</x:String>
                 <x:String>Категории расходов</x:String>
+                <x:String>Категории доходов</x:String>
             </ComboBox>
         </StackPanel>
         <StackPanel Grid.Row="1">
@@ -97,7 +97,7 @@
                                         <ColumnDefinition Width="*"/>
                                     </Grid.ColumnDefinitions>
                                     <Rectangle Fill="#242424" Grid.Row="0" RadiusX="6" RadiusY="6" Height="64" Width="64"/>
-                                    <FontIcon FontSize="48" FontFamily="Segoe Fluent Icons" Margin="4" 
+                                    <FontIcon FontSize="40" FontFamily="Segoe Fluent Icons" Margin="4" 
                                               Glyph="{x:Bind Path=Glyphs, Converter={StaticResource GlyphsConverter}}"/>
                                     <!--<FontIcon FontSize="24" FontFamily="Segoe Fluent Icons" Margin="10"
                                               Glyph="{x:Bind Path=SubGlyph, Converter={StaticResource GlyphsConverter}}"/>-->

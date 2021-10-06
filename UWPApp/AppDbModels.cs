@@ -38,7 +38,7 @@ namespace UWPApp
         public static Dictionary<int, string> GlyphList = new Dictionary<int, string>
         {
             { 0, "\ue2ac" },  
-            { 1, "\ue811" }, 
+            { 1, "\ue804" }, 
             { 2, "\ue82f" }, 
             { 3, "\ue704" }, 
             { 4, "\ue95e" },

@@ -39,28 +39,34 @@
             <SplitView.Pane>
                 <RelativePanel>
                     <ListBox x:Name="menu" SelectionMode="Single" SelectionChanged="menu_SelectionChanged">
-                        <ListBoxItem Name="home">
+                        <ListBoxItem Name="cards">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE737;" />
                                 <TextBlock FontSize="16" Text="Счета, карты" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem Name="share">
+                        <ListBoxItem Name="income">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE944;" />
                                 <TextBlock FontSize="16" Text="Доход" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem Name="settings">
+                        <ListBoxItem Name="expense">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE8a7;" />
                                 <TextBlock FontSize="16" Text="Расход" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
-                        <ListBoxItem Name="setting">
+                        <ListBoxItem Name="balance">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE912;" />
-                                <TextBlock FontSize="16" Text="Бюджет" Margin="16 0 0 0" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xEb05;" />
+                                <TextBlock FontSize="16" Text="Баланс" Margin="16 0 0 0" />
+                            </StackPanel>
+                        </ListBoxItem>
+                        <ListBoxItem Name="history">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE81c;" />
+                                <TextBlock FontSize="16" Text="История" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                     </ListBox>
