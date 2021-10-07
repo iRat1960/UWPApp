@@ -1,0 +1,72 @@
+﻿<UserControl
+    x:Class="UWPApp.Controls.OptionsControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWPApp.Controls"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600"
+    d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style x:Key="NoExpanderHeaderStyle" TargetType="ToggleButton">
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+        <DataTemplate x:Key="ExpanderHeaderTemplate1">
+            <Grid>
+                <TextBlock FontSize="16" Text="Гавный экран"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ExpanderHeaderTemplate2">
+            <Grid>
+                <TextBlock FontSize="16" Text="Уведомления и действия"/>
+            </Grid>
+        </DataTemplate>
+        <DataTemplate x:Key="ExpanderHeaderTemplate3">
+            <Grid>
+                <TextBlock FontSize="16" Text="Личные сведения"/>
+            </Grid>
+        </DataTemplate>
+    </UserControl.Resources>
+    
+    <Grid x:Name="grid1" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="28"/>
+        </Grid.RowDefinitions>
+
+        <controls:Expander HeaderTemplate="{StaticResource ExpanderHeaderTemplate1}" Background="Transparent"
+                           IsExpanded="True" HorizontalContentAlignment="Left">
+            <StackPanel Margin="32,8">
+                <TextBlock Margin="0,0,0,8" FontSize="12" Text="Выберите необходимые контролы для отображения их на главном экране" 
+                    TextWrapping="WrapWholeWords" Width="340" HorizontalAlignment="Left"/>
+                <ToggleSwitch IsOn="True" Header="Календарь" OffContent="Выкл." OnContent="Вкл."/>
+                <ToggleSwitch IsOn="False" Header="Текущий баланс" OffContent="Выкл." OnContent="Вкл." />
+                <ToggleSwitch IsOn="False" Header="Курс валют" OffContent="Выкл." OnContent="Вкл." />
+                <ToggleSwitch IsOn="False" Header="Банковские карты" OffContent="Выкл." OnContent="Вкл." />
+            </StackPanel>
+        </controls:Expander>
+
+        <controls:Expander Grid.Row="1" HeaderTemplate="{StaticResource ExpanderHeaderTemplate2}" 
+                           Background="Transparent" IsExpanded="False"
+                           HorizontalContentAlignment="Left">
+            <StackPanel Margin="32,8">
+                <TextBlock Margin="0,0,0,8" FontSize="12" Text="Настройте уведомления и действия, которые необходимы Вам в системе" 
+                       TextWrapping="WrapWholeWords" Width="340" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </controls:Expander>
+
+        <controls:Expander Grid.Row="2" HeaderTemplate="{StaticResource ExpanderHeaderTemplate3}" 
+                           Background="Transparent" IsExpanded="False"
+                           HorizontalContentAlignment="Left">
+            <StackPanel  Margin="32,8" Grid.Row="2">
+                <TextBlock Margin="0,0,0,8" FontSize="12" Text="Укажите личные сведения, чтобы персонализировать Ваше приложение" 
+                       TextWrapping="WrapWholeWords" Width="340" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </controls:Expander>
+    </Grid>
+</UserControl>

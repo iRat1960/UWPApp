@@ -8,11 +8,11 @@ namespace UWPApp
 {
     public sealed partial class SettingPage : Page
     {
-        SettingView view;
+        PagesView view;
 
         public SettingPage()
         {
-            view = new SettingView { Caption = "Параметры", SubCaption = "" };
+            view = new PagesView { Caption = "Параметры", SubCaption = "" };
             InitializeComponent();
             DataContext = view;
             menu.SelectedIndex = 0;
@@ -71,14 +71,17 @@ namespace UWPApp
                 int ct = grid.Children.Count - 1;
                 for (int i = ct; i > 0; i--)
                 {
-                    if (grid.Children[i].GetType().Equals(typeof(CategoryControl)) || grid.Children[i].GetType().Equals(typeof(SubCategoryControl)))
+                    if (grid.Children[i].GetType().Equals(typeof(OptionsControl)) || 
+                        grid.Children[i].GetType().Equals(typeof(CategoryControl)) || 
+                        grid.Children[i].GetType().Equals(typeof(SubCategoryControl)))
                         grid.Children.RemoveAt(i);
+                    
                 }
                 dynamic cont = null;
                 switch (ind)
                 {
                     case 0:
-                        //cont = new CategoryControl();
+                        cont = new OptionsControl();
                         break;
                     case 1:
                         cont = new CategoryControl();

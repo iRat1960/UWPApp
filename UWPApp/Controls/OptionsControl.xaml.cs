@@ -15,24 +15,11 @@ using Windows.UI.Xaml.Navigation;
 
 namespace UWPApp.Controls
 {
-    public sealed partial class CheckingAccount : UserControl
+    public sealed partial class OptionsControl : UserControl
     {
-        BankAccountView account;
-        public CheckingAccount()
+        public OptionsControl()
         {
             InitializeComponent();
-        }
-
-        public CheckingAccount(BankAccountView arg)
-        {
-            account = arg;
-            InitializeComponent();
-            DataContext = account;
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

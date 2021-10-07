@@ -94,15 +94,19 @@ namespace UWPApp
         RUB,
         USD,
         EUR,
-        CNY
+        GBP,
+        CNY,
+        BYN,
+        KZT
     }
     public enum CardType
     {
-        [System.ComponentModel.DataAnnotations.Display(Name = " ")]
+        [Display(Name = " ")]
         Нет = 0,
-        Расчётная = 1,
+        Дебетовая = 1,
         Кредитная = 2,
-        Дебетовая = 3
+        Овердрафтная = 3,
+        Предоплаченная = 4
     }
     public enum PaymentSystem
     {
@@ -114,6 +118,13 @@ namespace UWPApp
         AmericanExpress,
         JCB,
         UnionPay
+    }
+    public enum AccountType
+    {
+        [Display(Name = " ")]
+        Нет = 0,
+        Счёт = 1,
+        Карта = 2
     }
     public enum ChartsType
     {
@@ -146,7 +157,7 @@ namespace UWPApp
     }
     #endregion
     
-    public class SettingView : INotifyPropertyChanged
+    public class PagesView : INotifyPropertyChanged
     {
         private int _id;
         public int Id
@@ -196,7 +207,6 @@ namespace UWPApp
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<BankAccount> BankAccounts { get; set; }
 
         public override string ToString()
         {

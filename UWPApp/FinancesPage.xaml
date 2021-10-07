@@ -42,19 +42,19 @@
                         <ListBoxItem Name="cards">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE737;" />
-                                <TextBlock FontSize="16" Text="Счета, карты" Margin="16 0 0 0" />
+                                <TextBlock FontSize="16" Text="Состояние счетов" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="income">
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE944;" />
-                                <TextBlock FontSize="16" Text="Доход" Margin="16 0 0 0" />
+                                <TextBlock FontSize="16" Text="Доходы" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="expense">
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE8a7;" />
-                                <TextBlock FontSize="16" Text="Расход" Margin="16 0 0 0" />
+                                <TextBlock FontSize="24" FontFamily="Segoe Fluent Icons" Text="&#xE2b4;" />
+                                <TextBlock FontSize="16" Text="Расходы" Margin="16 0 0 0" />
                             </StackPanel>
                         </ListBoxItem>
                         <ListBoxItem Name="balance">
@@ -73,9 +73,9 @@
                 </RelativePanel>
             </SplitView.Pane>
             <SplitView.Content>
-                <Grid>
+                <Grid x:Name="grid">
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="40"/>
+                        <RowDefinition Height="64"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
                     <Rectangle Grid.RowSpan="2">
@@ -87,12 +87,11 @@
                             </LinearGradientBrush>
                         </Rectangle.Fill>
                     </Rectangle>
-                    <TextBlock Text="Мои банковские счета и(или) карты" 
-                               Margin="24,14,0,0" FontSize="18"/>
-                    <w:WrapPanel x:Name="wrap" Grid.Row="1">
-                        <cont:CheckingAccount Margin="20"/>
-                        <cont:CheckingAccount Margin="20"/>
-                    </w:WrapPanel>
+                    <StackPanel>
+                        <TextBlock Text="{Binding Caption}" Margin="24,8,0,0" FontSize="18"/>
+                        <TextBlock Text="{Binding SubCaption}" Margin="24,0"/>
+                    </StackPanel>
+                    <!--<w:WrapPanel x:Name="wrap" Grid.Row="1"/>-->
                 </Grid>
             </SplitView.Content>
         </SplitView>
