@@ -12,12 +12,12 @@ namespace UWPApp
     public class HFContext : DbContext
     {
         public DbSet<User> Users { get; set; }
-        public DbSet<ContentOfOperation> ContentOfOperations { get; set; }
+        //public DbSet<ContentOfOperation> ContentOfOperations { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Creditor> Creditors { get; set; }
+        //public DbSet<Creditor> Creditors { get; set; }
         public DbSet<AccountingEntry> Entries { get; set; }
         public DbSet<BankAccount> BankAccounts { get; set; }
-        public DbSet<Revolving> Revolvings { get; set; }
+        //public DbSet<Revolving> Revolvings { get; set; }
 
         //db.Database.ExecuteSqlCommand("ALTER TABLE dbo.Players ADD CONSTRAINT Players_Teams FOREIGN KEY (TeamId) REFERENCES dbo.Teams (Id) ON DELETE SET NULL");
 
@@ -88,10 +88,38 @@ namespace UWPApp
         }
     }
 
+    public class IntToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            int i = (int)value;
+            return i == 0 ? Visibility.Collapsed : Visibility.Visible;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return null;
+        }
+    }
+
+    public class BoolToVisibilityConverter : IValueConverter
+    {
+        public object Convert(object value, Type targetType, object parameter, string language)
+        {
+            bool flag = (bool)value;
+            return flag ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        public object ConvertBack(object value, Type targetType, object parameter, string language)
+        {
+            return null;
+        }
+    }
+
     #region " Перечисления "
     public enum CurrencyType
     {
-        RUB,
+        RUB = 0,
         USD,
         EUR,
         GBP,
@@ -110,7 +138,6 @@ namespace UWPApp
     }
     public enum PaymentSystem
     {
-        [Display(Name = " ")]
         Нет = 0,
         Мир,
         Visa,
@@ -214,25 +241,25 @@ namespace UWPApp
         }
     }
 
-    public class ContentOfOperation
-    {
-        public int Id { get; set; }
-        [Required, StringLength(250), Display(Name = "Содержание хозяйственной операции")]
-        public string OperationName { get; set; }
-        [Required, StringLength(6), Display(Name = "Дт")]
-        public string Debit { get; set; }
-        [Required, StringLength(6), Display(Name = "Кт")]
-        public string Credit { get; set; }
-    }
+    //public class ContentOfOperation
+    //{
+    //    public int Id { get; set; }
+    //    [Required, StringLength(250), Display(Name = "Содержание хозяйственной операции")]
+    //    public string OperationName { get; set; }
+    //    [Required, StringLength(6), Display(Name = "Дт")]
+    //    public string Debit { get; set; }
+    //    [Required, StringLength(6), Display(Name = "Кт")]
+    //    public string Credit { get; set; }
+    //}
 
-    public class Creditor
-    {
-        public int Id { get; set; }
-        [Required, StringLength(100), Display(Name = "Наименование")]
-        public string Name { get; set; }
-        [Required, Display(Name = "Тип")]
-        public CreditorsType Type { get; set; }
-    }
+    //public class Creditor
+    //{
+    //    public int Id { get; set; }
+    //    [Required, StringLength(100), Display(Name = "Наименование")]
+    //    public string Name { get; set; }
+    //    [Required, Display(Name = "Тип")]
+    //    public CreditorsType Type { get; set; }
+    //}
 
     public class Category
     {
@@ -242,7 +269,7 @@ namespace UWPApp
         [Required, Display(Name = "Код шрифта")]
         public int Glyphs { get; set; }
         [Required, Display(Name = "Тип")]
-        public string Type { get; set; }
+        public CategoriesType Type { get; set; }
         [Display(Name = "Проводка")]
         public int? ContentOfOperationId { get; set; }
         public int? ParentId { get; set; }
@@ -273,35 +300,37 @@ namespace UWPApp
         public bool Locking { get; set; }
     }
     // Оборотка по денежным средствам
-    public class Revolving
-    {
-        public int Id { get; set; }
-        [Display(Name = "Дата операции")]
-        public DateTime DateEntry { get; set; }
-        [Display(Name = "Сумма")]
-        [Range(typeof(decimal), "0,05", "10000000,0", ErrorMessage = "Наименьшая сумма - 0,05 рубля, в качестве разделителя дробной и целой части используется запятая")]
-        public decimal Amount { get; set; }
-        public CategoriesType Type { get; set; }
-    }
-    // Бухгалтерские проводки
+    //public class Revolving
+    //{
+    //    public int Id { get; set; }
+    //    [Display(Name = "Дата операции")]
+    //    public DateTime DateEntry { get; set; }
+    //    [Display(Name = "Сумма")]
+    //    [Range(typeof(decimal), "0,05", "10000000,0", ErrorMessage = "Наименьшая сумма - 0,05 рубля, в качестве разделителя дробной и целой части используется запятая")]
+    //    public decimal Amount { get; set; }
+    //    public CategoriesType Type { get; set; }
+    //}
+
+    // Проводки
     public class AccountingEntry
     {
         public int Id { get; set; }
         [Display(Name = "Дата операции")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
         public DateTime DateEntry { get; set; }
-        [Display(Name = "Подкатегория")]
+        [Display(Name = "Категория")]
         public int CategoryId { get; set; }
         [Display(Name = "Счёт платежа")]
-        public int CardsId { get; set; }
+        public int BankAccountId { get; set; }
         [Display(Name = "Сумма")]
-        [Range(typeof(decimal), "0,05", "10000000,0", ErrorMessage = "Наименьшая сумма - 0,05 рубля, в качестве разделителя дробной и целой части используется запятая")]
         public decimal Amount { get; set; }
         [Display(Name = "Валюта")]
         public CurrencyType Currency { get; set; }
         public bool flag { get; set; }
 
         public Category Category { get; set; }
-        public BankAccount Cards { get; set; }
+        public BankAccount BankAccount { get; set; }
     }
     #endregion
 }

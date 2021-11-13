@@ -21,7 +21,7 @@ namespace UWPApp.Pages
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             int id = 0, pid = 0, key = 0;
-            string type = "";
+            CategoriesType type = 0;
             if (e.Parameter != null)
             {
                 string args = (string)e.Parameter;
@@ -51,18 +51,15 @@ namespace UWPApp.Pages
                 nameBox.Text = category.Name;
                 type = category.Type;
                 icon.Glyph = Global.GlyphList[category.Glyphs];
+                comboBox.Visibility = Visibility.Collapsed;
+                border.Visibility = Visibility.Visible;
+                textBox.Text = category.Type.ToString();
             }
             else
             {
                 category = new Category { Id = 0, Name = "", Type = type, Glyphs = key, ParentId = pid, ContentOfOperationId = 1 };
             }
             headerBlock.Text += (parentCategory != null ? "под" : "") + "категории";
-            if (type.Length > 0)
-            {
-                comboBox.Visibility = Visibility.Collapsed;
-                border.Visibility = Visibility.Visible;
-                textBox.Text = category.Type;
-            }
         }
 
         private void GoToMainPage()
@@ -84,7 +81,7 @@ namespace UWPApp.Pages
                 }
                 else
                 {
-                    category.Type = comboBox.SelectedValue.ToString();
+                    category.Type = comboBox.SelectedIndex == 0 ? CategoriesType.Доходы : CategoriesType.Расходы;
                     db.Categories.Add(category);
                 }
                 db.SaveChanges();

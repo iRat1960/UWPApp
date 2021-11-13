@@ -21,7 +21,7 @@
             <TextBlock FontSize="16" Margin="20,4">Наименование</TextBlock>
             <TextBox x:Name="nameBox" Margin="20,4" Width="480" HorizontalAlignment="Left"/>
             <TextBlock FontSize="16" Margin="20,4">Тип категории</TextBlock>
-            <ComboBox x:Name="comboBox" Width="280" Margin="20,4,0,0" PlaceholderText="Укажите тип категории..." 
+            <ComboBox x:Name="comboBox" Width="280" Margin="20,4,0,0" SelectedIndex="0" 
                       HorizontalAlignment="Left" VerticalContentAlignment="Center"
                       Padding="6,0,6,3">
                 <x:String>Доходы</x:String>

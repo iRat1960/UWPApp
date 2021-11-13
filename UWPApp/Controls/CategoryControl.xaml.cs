@@ -58,7 +58,7 @@ namespace UWPApp.Controls
                 if (ind == 0)
                     list = db.Categories.Where(o => o.ParentId == 0).ToList();
                 else
-                    list = db.Categories.Where(o => o.ParentId == 0 && o.Type == (ind == 2 ? "Доходы" : "Расходы")).ToList();
+                    list = db.Categories.Where(o => o.ParentId == 0 && o.Type == (ind == 2 ? CategoriesType.Доходы : CategoriesType.Расходы)).ToList();
                 collection.Clear();
                 foreach (Category c in list)
                 {
@@ -160,7 +160,7 @@ namespace UWPApp.Controls
         public int Id { get; set; }
         public string Name { get; set; }
         public int Glyphs { get; set; }
-        public string Type { get; set; }
+        public CategoriesType Type { get; set; }
         public ICommand DelCommand { get; set; }
         public ICommand UpdCommand { get; set; }
     }

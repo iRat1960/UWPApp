@@ -91,7 +91,7 @@
                         <TextBlock Text="{Binding Caption}" Margin="24,8,0,0" FontSize="18"/>
                         <TextBlock Text="{Binding SubCaption}" Margin="24,0"/>
                     </StackPanel>
-                    <!--<w:WrapPanel x:Name="wrap" Grid.Row="1"/>-->
+                    <Grid x:Name="gridCont" Grid.Row="1"/>
                 </Grid>
             </SplitView.Content>
         </SplitView>
@@ -136,5 +136,4 @@
             </ListBox>
         </StackPanel>
     </Grid>
-    
 </Page>

@@ -7,16 +7,25 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="252"
+    d:DesignHeight="260"
     d:DesignWidth="280">
 
-    <Grid Width="280" Height="252">
+    <UserControl.Resources>
+        <local:IntToVisibilityConverter x:Key="VisibilityConverter"/>
+        <local:BoolToVisibilityConverter x:Key="BoolVisibilityConverter"/>
+    </UserControl.Resources>
+    <Grid Width="280" Height="260">
         <Grid.RowDefinitions>
             <RowDefinition Height="32"/>
-            <RowDefinition Height="220"/>
+            <RowDefinition Height="228"/>
         </Grid.RowDefinitions>
         <Rectangle Grid.RowSpan="2" Fill="White" RadiusX="6" RadiusY="6" Opacity="0.7"/>
-        <TextBlock Text="{Binding Path=Name}" Margin="10,6,0,4" Foreground="Black"/>
+        <StackPanel Orientation="Horizontal" Margin="6,0">
+            <FontIcon FontSize="16" Foreground="Red" Glyph="&#xe91F;" HorizontalAlignment="Left"
+                      Visibility="{Binding Path=Locking, Converter={StaticResource BoolVisibilityConverter}}"
+                      ToolTipService.ToolTip="Заблокирован"/>
+            <TextBlock Text="{Binding Path=Name}" Margin="4,6,80,4" Foreground="Black"/>
+        </StackPanel>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,1,4,0">
             <Button x:Name="buttonUpd" Background="Transparent">
                 <Button.Content>
@@ -40,7 +49,7 @@
                 </Button.Flyout>
             </Button>
         </StackPanel>
-        <Rectangle Grid.Row="1" Fill="#242424" Margin="6,0,6,6" RadiusX="4" RadiusY="4"/>
+        <Rectangle Grid.Row="1" Fill="#202424" Margin="6,0,6,6" RadiusX="4" RadiusY="4"/>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="130"/>
@@ -58,19 +67,26 @@
             <TextBlock Text="Валюта:" Grid.Row="1" HorizontalAlignment="Right"/>
             <TextBlock Text="{Binding Path=Currency}" Grid.Row="1" Grid.Column="1" Margin="10,0"/>
             <Rectangle Grid.Row="2" Grid.ColumnSpan="2" Fill="LightGray" Margin="6,0" Height="1"/>
+            <TextBlock Grid.Row="3" Grid.ColumnSpan="2" Text="{Binding Path=CardType}"
+                       Visibility="{Binding Path=CardType, Converter={StaticResource VisibilityConverter}}"
+                       VerticalAlignment="Top" Margin="20,8"/>
             <ListBox Grid.Row="3" Grid.ColumnSpan="2" Margin="8,8,8,2" VerticalAlignment="Bottom" Background="Transparent">
-                <ListBoxItem Padding="0,2,0,5" Height="32">
+                <ListBoxItem Padding="0,2,0,5" Height="28">
                     <TextBlock Text="История операций" Margin="12 0 0 0" />
                 </ListBoxItem>
-                <ListBoxItem Padding="0,2,0,5" Height="32">
+                <ListBoxItem Padding="0,2,0,5" Height="28">
                     <TextBlock Text="Приход" Margin="12 0 0 0" />
                 </ListBoxItem>
-                <ListBoxItem Padding="0,2,0,5" Height="32">
+                <ListBoxItem Padding="0,2,0,5" Height="28">
                     <TextBlock Text="Расход" Margin="12 0 0 0" />
                 </ListBoxItem>
             </ListBox>
-            <Border Grid.Row="4" Grid.ColumnSpan="2" CornerRadius="0,0,4,4" Background="#363636" Margin="6,0,6,6">
-                <TextBlock Text="{Binding Path=AccountType}" Margin="12,8"/>
+            <Border Grid.Row="4" Grid.ColumnSpan="2" CornerRadius="0,0,4,4" Background="#323636" Margin="6,0,6,6">
+                <Grid>
+                    <TextBlock Text="{Binding Path=AccountType}" HorizontalAlignment="Left" Margin="12,8"/>
+                    <TextBlock Text="{Binding Path=Payment}" HorizontalAlignment="Right" Margin="12,8"
+                               Visibility="{Binding Path=Payment, Converter={StaticResource VisibilityConverter}}"/>
+                </Grid>
             </Border>
         </Grid>
     </Grid>
